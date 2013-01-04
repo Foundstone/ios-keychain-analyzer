@@ -1,0 +1,356 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02340D0115FD120300623A3A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02340D0015FD120300623A3A /* UIKit.framework */; };
+		02340D0315FD120300623A3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02340D0215FD120300623A3A /* Foundation.framework */; };
+		02340D0515FD120300623A3A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02340D0415FD120300623A3A /* CoreGraphics.framework */; };
+		02340D0B15FD120300623A3A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02340D0915FD120300623A3A /* InfoPlist.strings */; };
+		02340D0D15FD120300623A3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 02340D0C15FD120300623A3A /* main.m */; };
+		02340D1115FD120300623A3A /* FS_KA_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02340D1015FD120300623A3A /* FS_KA_AppDelegate.m */; };
+		023411D316207FEB0012A485 /* ConfirmationDialogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 023411D216207FEB0012A485 /* ConfirmationDialogView.xib */; };
+		023411D71620805B0012A485 /* FS_KA_ConfirmationDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 023411D61620805B0012A485 /* FS_KA_ConfirmationDialogViewController.m */; };
+		023761D11605096D00CBF68C /* FS_KA_Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 023761D01605096D00CBF68C /* FS_KA_Constants.m */; };
+		02507E531602BC3900156850 /* FS_KA_Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 02507E521602BC3900156850 /* FS_KA_Helper.m */; };
+		02507E561602DFB200156850 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02507E551602DFB200156850 /* Security.framework */; };
+		027AA6CC15FE7651003751DD /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027AA6CB15FE7651003751DD /* MainView.xib */; };
+		027AA6D415FE7B1D003751DD /* FS_KA_MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 027AA6D315FE7B1D003751DD /* FS_KA_MainViewController.m */; };
+		02C3E3E116613A1300D7CF8D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 02C3E3E016613A1300D7CF8D /* Icon.png */; };
+		02C3E3E716615F2100D7CF8D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 02C3E3E616615F2100D7CF8D /* Default.png */; };
+		02C3E3EA166161B800D7CF8D /* AboutDialogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02C3E3E9166161B800D7CF8D /* AboutDialogView.xib */; };
+		02C3E3ED16617B4600D7CF8D /* FS_KA_AboutDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C3E3EC16617B4600D7CF8D /* FS_KA_AboutDialogViewController.m */; };
+		02D5F690160FEA9400561531 /* iOSKeychainDataViewer.htm in Resources */ = {isa = PBXBuildFile; fileRef = 02D5F68F160FEA9400561531 /* iOSKeychainDataViewer.htm */; };
+		02D5F692160FEAD400561531 /* iOSKeychainAnalysisReportViewer.htm in Resources */ = {isa = PBXBuildFile; fileRef = 02D5F691160FEAD400561531 /* iOSKeychainAnalysisReportViewer.htm */; };
+		02D5F694160FFD9800561531 /* fs_header_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02D5F693160FFD9800561531 /* fs_header_image.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		02340CFC15FD120300623A3A /* iOSKeychainAnalyzer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSKeychainAnalyzer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02340D0015FD120300623A3A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		02340D0215FD120300623A3A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		02340D0415FD120300623A3A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		02340D0815FD120300623A3A /* iOSKeychainAnalyzer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOSKeychainAnalyzer-Info.plist"; sourceTree = "<group>"; };
+		02340D0A15FD120300623A3A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		02340D0C15FD120300623A3A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		02340D0E15FD120300623A3A /* iOSKeychainAnalyzer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSKeychainAnalyzer-Prefix.pch"; sourceTree = "<group>"; };
+		02340D0F15FD120300623A3A /* FS_KA_AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FS_KA_AppDelegate.h; sourceTree = "<group>"; };
+		02340D1015FD120300623A3A /* FS_KA_AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FS_KA_AppDelegate.m; sourceTree = "<group>"; };
+		023411D216207FEB0012A485 /* ConfirmationDialogView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmationDialogView.xib; sourceTree = "<group>"; };
+		023411D51620805B0012A485 /* FS_KA_ConfirmationDialogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FS_KA_ConfirmationDialogViewController.h; sourceTree = "<group>"; };
+		023411D61620805B0012A485 /* FS_KA_ConfirmationDialogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FS_KA_ConfirmationDialogViewController.m; sourceTree = "<group>"; };
+		023761CF1605096D00CBF68C /* FS_KA_Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FS_KA_Constants.h; sourceTree = "<group>"; };
+		023761D01605096D00CBF68C /* FS_KA_Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FS_KA_Constants.m; sourceTree = "<group>"; };
+		02507E511602BC3900156850 /* FS_KA_Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FS_KA_Helper.h; sourceTree = "<group>"; };
+		02507E521602BC3900156850 /* FS_KA_Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FS_KA_Helper.m; sourceTree = "<group>"; };
+		02507E551602DFB200156850 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		027AA6CB15FE7651003751DD /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		027AA6D215FE7B1D003751DD /* FS_KA_MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FS_KA_MainViewController.h; sourceTree = "<group>"; };
+		027AA6D315FE7B1D003751DD /* FS_KA_MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FS_KA_MainViewController.m; sourceTree = "<group>"; };
+		02C3E3E016613A1300D7CF8D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		02C3E3E616615F2100D7CF8D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		02C3E3E9166161B800D7CF8D /* AboutDialogView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutDialogView.xib; sourceTree = "<group>"; };
+		02C3E3EB16617B4600D7CF8D /* FS_KA_AboutDialogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FS_KA_AboutDialogViewController.h; sourceTree = "<group>"; };
+		02C3E3EC16617B4600D7CF8D /* FS_KA_AboutDialogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FS_KA_AboutDialogViewController.m; sourceTree = "<group>"; };
+		02D5F68F160FEA9400561531 /* iOSKeychainDataViewer.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = iOSKeychainDataViewer.htm; sourceTree = "<group>"; };
+		02D5F691160FEAD400561531 /* iOSKeychainAnalysisReportViewer.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = iOSKeychainAnalysisReportViewer.htm; sourceTree = "<group>"; };
+		02D5F693160FFD9800561531 /* fs_header_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fs_header_image.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		02340CF915FD120300623A3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02507E561602DFB200156850 /* Security.framework in Frameworks */,
+				02340D0115FD120300623A3A /* UIKit.framework in Frameworks */,
+				02340D0315FD120300623A3A /* Foundation.framework in Frameworks */,
+				02340D0515FD120300623A3A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02340CF115FD120300623A3A = {
+			isa = PBXGroup;
+			children = (
+				02507E551602DFB200156850 /* Security.framework */,
+				02340D0615FD120300623A3A /* iOSKeychainAnalyzer */,
+				02340CFF15FD120300623A3A /* Frameworks */,
+				02340CFD15FD120300623A3A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		02340CFD15FD120300623A3A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				02340CFC15FD120300623A3A /* iOSKeychainAnalyzer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		02340CFF15FD120300623A3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				02340D0015FD120300623A3A /* UIKit.framework */,
+				02340D0215FD120300623A3A /* Foundation.framework */,
+				02340D0415FD120300623A3A /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		02340D0615FD120300623A3A /* iOSKeychainAnalyzer */ = {
+			isa = PBXGroup;
+			children = (
+				02C3E3DF1661399300D7CF8D /* Resources */,
+				02D5F68D160FEA2500561531 /* Report_HTML_Documents */,
+				02340D0F15FD120300623A3A /* FS_KA_AppDelegate.h */,
+				02340D1015FD120300623A3A /* FS_KA_AppDelegate.m */,
+				027AA6D215FE7B1D003751DD /* FS_KA_MainViewController.h */,
+				027AA6D315FE7B1D003751DD /* FS_KA_MainViewController.m */,
+				02507E511602BC3900156850 /* FS_KA_Helper.h */,
+				02507E521602BC3900156850 /* FS_KA_Helper.m */,
+				023761CF1605096D00CBF68C /* FS_KA_Constants.h */,
+				023761D01605096D00CBF68C /* FS_KA_Constants.m */,
+				027AA6CB15FE7651003751DD /* MainView.xib */,
+				023411D216207FEB0012A485 /* ConfirmationDialogView.xib */,
+				023411D51620805B0012A485 /* FS_KA_ConfirmationDialogViewController.h */,
+				023411D61620805B0012A485 /* FS_KA_ConfirmationDialogViewController.m */,
+				02C3E3E9166161B800D7CF8D /* AboutDialogView.xib */,
+				02C3E3EB16617B4600D7CF8D /* FS_KA_AboutDialogViewController.h */,
+				02C3E3EC16617B4600D7CF8D /* FS_KA_AboutDialogViewController.m */,
+				02340D0715FD120300623A3A /* Supporting Files */,
+			);
+			path = iOSKeychainAnalyzer;
+			sourceTree = "<group>";
+		};
+		02340D0715FD120300623A3A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				02340D0815FD120300623A3A /* iOSKeychainAnalyzer-Info.plist */,
+				02340D0915FD120300623A3A /* InfoPlist.strings */,
+				02340D0C15FD120300623A3A /* main.m */,
+				02340D0E15FD120300623A3A /* iOSKeychainAnalyzer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		02C3E3DF1661399300D7CF8D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				02C3E3E616615F2100D7CF8D /* Default.png */,
+				02C3E3E016613A1300D7CF8D /* Icon.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		02D5F68D160FEA2500561531 /* Report_HTML_Documents */ = {
+			isa = PBXGroup;
+			children = (
+				02D5F693160FFD9800561531 /* fs_header_image.jpg */,
+				02D5F68F160FEA9400561531 /* iOSKeychainDataViewer.htm */,
+				02D5F691160FEAD400561531 /* iOSKeychainAnalysisReportViewer.htm */,
+			);
+			name = Report_HTML_Documents;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		02340CFB15FD120300623A3A /* iOSKeychainAnalyzer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02340D1415FD120300623A3A /* Build configuration list for PBXNativeTarget "iOSKeychainAnalyzer" */;
+			buildPhases = (
+				02340CF815FD120300623A3A /* Sources */,
+				02340CF915FD120300623A3A /* Frameworks */,
+				02340CFA15FD120300623A3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOSKeychainAnalyzer;
+			productName = iOSKeychainAnalyzer;
+			productReference = 02340CFC15FD120300623A3A /* iOSKeychainAnalyzer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		02340CF315FD120300623A3A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FS_KA_;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Foundstone Inc., A Division of McAfee";
+			};
+			buildConfigurationList = 02340CF615FD120300623A3A /* Build configuration list for PBXProject "iOSKeychainAnalyzer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 02340CF115FD120300623A3A;
+			productRefGroup = 02340CFD15FD120300623A3A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				02340CFB15FD120300623A3A /* iOSKeychainAnalyzer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		02340CFA15FD120300623A3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02340D0B15FD120300623A3A /* InfoPlist.strings in Resources */,
+				027AA6CC15FE7651003751DD /* MainView.xib in Resources */,
+				02D5F690160FEA9400561531 /* iOSKeychainDataViewer.htm in Resources */,
+				02D5F692160FEAD400561531 /* iOSKeychainAnalysisReportViewer.htm in Resources */,
+				02D5F694160FFD9800561531 /* fs_header_image.jpg in Resources */,
+				023411D316207FEB0012A485 /* ConfirmationDialogView.xib in Resources */,
+				02C3E3E116613A1300D7CF8D /* Icon.png in Resources */,
+				02C3E3E716615F2100D7CF8D /* Default.png in Resources */,
+				02C3E3EA166161B800D7CF8D /* AboutDialogView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		02340CF815FD120300623A3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02340D0D15FD120300623A3A /* main.m in Sources */,
+				02340D1115FD120300623A3A /* FS_KA_AppDelegate.m in Sources */,
+				027AA6D415FE7B1D003751DD /* FS_KA_MainViewController.m in Sources */,
+				02507E531602BC3900156850 /* FS_KA_Helper.m in Sources */,
+				023761D11605096D00CBF68C /* FS_KA_Constants.m in Sources */,
+				023411D71620805B0012A485 /* FS_KA_ConfirmationDialogViewController.m in Sources */,
+				02C3E3ED16617B4600D7CF8D /* FS_KA_AboutDialogViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		02340D0915FD120300623A3A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02340D0A15FD120300623A3A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		02340D1215FD120300623A3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		02340D1315FD120300623A3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		02340D1515FD120300623A3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iOSKeychainAnalyzer/iOSKeychainAnalyzer-Prefix.pch";
+				INFOPLIST_FILE = "iOSKeychainAnalyzer/iOSKeychainAnalyzer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		02340D1615FD120300623A3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iOSKeychainAnalyzer/iOSKeychainAnalyzer-Prefix.pch";
+				INFOPLIST_FILE = "iOSKeychainAnalyzer/iOSKeychainAnalyzer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		02340CF615FD120300623A3A /* Build configuration list for PBXProject "iOSKeychainAnalyzer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02340D1215FD120300623A3A /* Debug */,
+				02340D1315FD120300623A3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02340D1415FD120300623A3A /* Build configuration list for PBXNativeTarget "iOSKeychainAnalyzer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02340D1515FD120300623A3A /* Debug */,
+				02340D1615FD120300623A3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 02340CF315FD120300623A3A /* Project object */;
+}

@@ -1,0 +1,1025 @@
+<html>
+    
+    <head>
+        <meta name=Title content="Keychain Data Analysis Report">
+            <meta name=Keywords content="">
+                <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+                        <style>
+                            <!--
+                            /* Font Definitions */
+                            @font-face
+                            {font-family:Arial;
+                                panose-1:2 11 6 4 2 2 2 2 2 4;}
+                            @font-face
+                            {font-family:Arial;
+                                panose-1:2 11 6 4 2 2 2 2 2 4;}
+                            @font-face
+                            {font-family:"MS Mincho";}
+                            @font-face
+                            {font-family:Tahoma;
+                                panose-1:2 11 6 4 3 5 4 4 2 4;}
+                            @font-face
+                            {font-family:"Lucida Grande";
+                                panose-1:2 11 6 0 4 5 2 2 2 4;}
+                            /* Style Definitions */
+                            
+                            p.MsoNormal, li.MsoNormal, div.MsoNormal
+                            {margin:0in;
+                                margin-bottom:.0001pt;
+                                font-size:10.0pt;
+                                font-family:Tahoma;}
+                            h1
+                            {margin-top:12.0pt;
+                                margin-right:0in;
+                                margin-bottom:3.0pt;
+                                margin-left:0in;
+                                page-break-before:always;
+                                font-size:12.0pt;
+                                font-family:Arial;
+                                color:#DB0029;}
+                            h2
+                            {margin-top:12.0pt;
+                                margin-right:0in;
+                                margin-bottom:3.0pt;
+                                margin-left:0in;
+                                font-size:12.0pt;
+                                font-family:Arial;}
+                            p.MsoFooter, li.MsoFooter, div.MsoFooter
+                            {margin:0in;
+                                margin-bottom:.0001pt;
+                                font-size:10.0pt;
+                                font-family:Tahoma;
+                                color:red;}
+                            span.Heading1Char
+                            {font-family:Arial;
+                                color:#DB0029;
+                                font-weight:bold;}
+                            span.Heading2Char
+                            {font-family:Arial;
+                                font-weight:bold;}
+                            span.HeaderChar
+                            {font-family:Tahoma;}
+                            span.FooterChar
+                            {font-family:Tahoma;}
+                            span.BalloonTextChar
+                            {font-family:"Lucida Grande";}
+                            .MsoChpDefault
+                            {font-family:Cambria;}
+                            
+                            table.fsstyle {
+                                border-collapse:collapse;
+                                border:solid windowtext 1.0pt;
+                                border-left:solid windowtext 1.0pt;
+                                padding:0in 5.4pt 0in 5.4pt;
+                                margin:0in;
+                                font-size:10.0pt;
+                                font-family:Tahoma;
+                            }
+                            
+                            .fsstyletableheader {
+                                font-weight:bold;
+                            }
+                            
+                            table.fsstyle tr:nth-child(odd) td {
+                                border:solid windowtext 1.0pt;
+                                border-left:solid windowtext 1.0pt;
+                                background:#E6E6E6;
+                                padding:0in 5.4pt 0in 5.4pt;
+                                margin:0in;
+                                font-size:10.0pt;
+                                font-family:Tahoma;
+                            }
+                            
+                            table.fsstyle tr:nth-child(even) td {
+                                border:solid windowtext 1.0pt;
+                                border-left:solid windowtext 1.0pt;
+                                margin:0in;
+                                padding:0in 5.4pt 0in 5.4pt;
+                                font-size:10.0pt;
+                                font-family:Tahoma;
+                            }
+                            
+                            
+                            /* Page Definitions */
+                            @page WordSection1
+                            {size:8.5in 11.0in;
+                                margin:1.0in 1.25in 1.0in 1.25in;}
+                            div.WordSection1
+                            {page:WordSection1;}
+                            /* List Definitions */
+                            
+                            ol
+                            {margin-bottom:0in;}
+                            ul
+                            {margin-bottom:0in;}
+                            -->
+                            </style>
+                        
+                        <img src="fs_header_image.jpg" alt="Foundstone Header Image" width="900" />
+                        
+    </head>
+    
+    <body lang=EN-US>
+        
+        <div class=WordSection1>
+            <p class=MsoNormal>&nbsp;</p>
+            <div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+                <h1>Keychain Data Analysis Report</h1>
+            </div>
+            <p class=MsoNormal style='font-size:10.0pt; font-family:Tahoma'>
+            This reports includes the results of analyzing the keychain items from a security standpoint.
+            <BR/>The raw analysis data can be found in the "KeychainAnalysisReport.jsonp" file.
+            </p>
+            <p class=MsoNormal>&nbsp;</p>
+            
+            <div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+                
+                <h2 style='border:none;padding:0in'>Summary</h2>
+                
+            </div>
+            
+            <ol style='margin-top:0in' start=1 type=1>
+                <li id="num_weak_pass_items" class=MsoNormal></li>
+                <li id="num_weak_auth_items" class=MsoNormal></li>
+                <li id="num_weak_protocol_items" class=MsoNormal></li>
+                <li id="num_weak_keylength_items" class=MsoNormal></li>
+                <li id="num_weak_accessibility_items" class=MsoNormal></li>
+            </ol>
+            
+            <p class=MsoNormal>&nbsp;</p>
+            <div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+                <h2 style='border:none;padding:0in'>Weak Password Check Results</h2>
+            </div>
+            <p class=MsoNormal>
+            This check analyzes the keychain and determines if any of the stored passwords are weak.
+            <BR />
+            A weak password is a password that is either less than 8 characters or is not alphanumeric
+            or does not contain any special characters.
+            </p>
+            <p class=MsoNormal>&nbsp;</p>
+            <table id="weak_pass_check_table" class="fsstyle"></table>
+            
+            <p class=MsoNormal>&nbsp;</p>
+            <div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+                <h2 style='border:none;padding:0in'>Weak Authentication Method Check Results</h2>
+            </div>
+            <p class=MsoNormal>
+            This check analyzes the keychain and determines if any of the stored passwords are configured to use weak authentication methods.
+            <BR />
+            Examples of weak authentication methods are web server based authentication methods - HTTP Basic and HTTP Digest.
+            </p>
+            <p class=MsoNormal>&nbsp;</p>
+            <table id="weak_auth_method_check_table" class="fsstyle"></table>
+            
+            <p class=MsoNormal>&nbsp;</p>
+            <div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+                <h2 style='border:none;padding:0in'>Weak Protocol Check Results</h2>
+            </div>
+            <p class=MsoNormal>
+            This check analyzes the keychain and determines if any of the stored passwords are configured for use with insecure protocols or ports.
+            <BR />
+            Examples of insecure protocols include FTP, HTTP, NNTP, POP3, IMAP, IRC, LDAP, etc.
+            </p>
+            <p class=MsoNormal>&nbsp;</p>
+            <table id="weak_protocol_check_table" class="fsstyle"></table>
+            
+            <p class=MsoNormal>&nbsp;</p>
+            <div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+                <h2 style='border:none;padding:0in'>Weak Key Length Check Results</h2>
+            </div>
+            <p class=MsoNormal>
+            This check analyzes the keychain and determines if any of the stored keys have insufficient key length.
+            <BR />
+            For symmetric keys, key length of less than 128 bits is considered insufficient.
+            <BR />
+            For public/private keys, key length of less than 1024 bits is considered insufficient.
+            </p>
+            <p class=MsoNormal>&nbsp;</p>
+            <table id="weak_key_length_check_table" class="fsstyle"></table>
+            
+            <p class=MsoNormal>&nbsp;</p>
+            <div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+                <h2 style='border:none;padding:0in'>Insecure Accessibility Check Results</h2>
+            </div>
+            <p class=MsoNormal>
+            This check analyzes the keychain and determines if any of the passwords, keys, certificates or identities is stored insecurely.
+            <BR />
+            Examples include items that can be accessed anytime (irrespective of whether the device is locked or not) indicating that these items are not protected
+            <BR />
+            using the user configured device passcode.
+            </p>
+            <p class=MsoNormal>&nbsp;</p>
+            <table id="weak_accessbility_check_table" class="fsstyle"></table>
+            <p class=MsoNormal>&nbsp;</p>
+            
+            <p class=MsoNormal>&nbsp;</p>
+            <div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+            </div>
+            <p class=MsoFooter>
+            www.foundstone.com
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Copyright 2012 McAfee, Inc.
+            </p>
+            <p class=MsoNormal style='align:right'></p>
+            <p class=MsoNormal>&nbsp;</p>
+            
+        </div>
+        
+    </body>
+    
+    <script language = "javascript">
+        
+        //Load the JSONP with the data
+        var head= document.getElementsByTagName('head')[0];
+        var script= document.createElement('script');
+        script.type= 'application/x-javascript';
+        script.src= "KeychainAnalysisReport.jsonp";
+        head.appendChild(script);
+        
+        var col1_width = 25;
+        var col2_width = 150;
+        var col3_width = 350;
+        var col4_width = 300;
+        
+        //
+        // Following is the structure of the JSON for the analysis data
+        // {
+        //      "WeakPasswordCheckResults": [
+        //        {ResultItem1}, {ResultItem2}, ...
+        //      ]
+        //      "WeakAccessibilityCheckResults": [
+        //        {ResultItem1}, {ResultItem2}, ...
+        //      ]
+        //      "WeakAuthenticationCheckResults": [
+        //        {ResultItem1}, {ResultItem2}, ...
+        //      ]
+        //      "WeakProtocolCheckResults": [
+        //        {ResultItem1}, {ResultItem2}, ...
+        //      ]
+        //      "WeakKeyCheckResults": [
+        //        {ResultItem1}, {ResultItem2}, ...
+        //      ]
+        // }
+        //
+        // Currently the following checks are supported:
+        //	1. Weak passwords check
+        //	2. Weak authentication methods check
+        //	3. Weak protocols check
+        //	4. Weak key length check
+        //	5. Weak accessibility check
+        //
+        function displayAnalysisJSONData(parsedJSONData)
+        {
+            //Update the summary data
+            updateSummaryData(parsedJSONData);
+            
+            //Add weak password items table
+            var old_data_table		 		= document.getElementById('weak_pass_check_table');
+            var objWeakPasswordCheck 		= parsedJSONData.WeakPasswordCheckResults;;
+            addWeakPasswordCheckResults(objWeakPasswordCheck, old_data_table);
+            
+            //Add weak auth items table
+            old_data_table 					= document.getElementById('weak_auth_method_check_table');
+            var objWeakAuthCheck 			= parsedJSONData.WeakAuthenticationCheckResults;
+            addWeakAuthCheckResults(objWeakAuthCheck,old_data_table);
+            
+            //Add weak protocols table
+            old_data_table 					= document.getElementById('weak_protocol_check_table');
+            var objWeakProtocolsCheck 		= parsedJSONData.WeakProtocolCheckResults;
+            addWeakProtocolsCheckResults(objWeakProtocolsCheck,old_data_table);
+            
+            //Add weak keys table
+            old_data_table 					= document.getElementById('weak_key_length_check_table');
+            var objWeakKeysCheck 			= parsedJSONData.WeakKeyCheckResults;
+            addWeakKeysCheckResults(objWeakKeysCheck, old_data_table);
+            
+            //Add weak accessibility table
+            old_data_table 					= document.getElementById('weak_accessbility_check_table');
+            var objWeakAccessibilityCheck 	= parsedJSONData.WeakAccessibilityCheckResults;
+            addWeakAccessibilityCheckResults(objWeakAccessibilityCheck,old_data_table);
+            
+            return;
+        }
+        
+        function updateSummaryData(parsedJSONData)
+        {
+            var numWeakPasswordItems 		= 0;
+            var numWeakAuthItems	 		= 0;
+            var numWeakProtocolItems 		= 0;
+            var numWeakKeyLengthItems 		= 0;
+            var numWeakAccessibilityItems 	= 0;
+
+            var arrWeakPasswordItems        = parsedJSONData.WeakPasswordCheckResults;
+            var arrWeakAuthItems            = parsedJSONData.WeakAuthenticationCheckResults;
+            var arrWeakProtocolItems        = parsedJSONData.WeakProtocolCheckResults;
+            var arrWeakKeyItems             = parsedJSONData.WeakKeyCheckResults;
+            var arrWeakAccessibilityItems   = parsedJSONData.WeakAccessibilityCheckResults;
+            
+            //Weak password check items count
+            if ( ("undefined" !== typeof arrWeakPasswordItems) && (0 < arrWeakPasswordItems.length) )
+                numWeakPasswordItems = arrWeakPasswordItems.length;
+            
+            //Weak password auth methods check items count
+            if ( ("undefined" !== typeof arrWeakAuthItems) && (0 < arrWeakAuthItems.length) )
+                numWeakAuthItems = arrWeakAuthItems.length;
+            
+            //Weak protocols check items count
+            if ( ("undefined" !== typeof arrWeakProtocolItems) && (0 < arrWeakProtocolItems.length) )
+                numWeakProtocolItems = arrWeakProtocolItems.length;
+            
+            //Weak key length check items count
+            if ( ("undefined" !== typeof arrWeakKeyItems) && (0 < arrWeakKeyItems.length) )
+                numWeakKeyLengthItems = arrWeakKeyItems.length;
+            
+            //Weak accessibility check items count
+            if ( ("undefined" !== typeof arrWeakAccessibilityItems) && (0 < arrWeakAccessibilityItems.length) )
+                numWeakAccessibilityItems = arrWeakAccessibilityItems.length;
+            
+            var lbl_numWeakPasswords		= "Number of keychain items with weak password  found - " + numWeakPasswordItems;
+            var old_elem_numWeakPasswords 	= document.getElementById('num_weak_pass_items');
+            var new_elem_numWeakPasswords 	= old_elem_numWeakPasswords.cloneNode();
+            new_elem_numWeakPasswords.appendChild(document.createTextNode(lbl_numWeakPasswords));
+            old_elem_numWeakPasswords.parentNode.replaceChild(new_elem_numWeakPasswords, old_elem_numWeakPasswords);
+            
+            var lbl_numWeakAuthItems 		= "Number of keychain items with weak authentication method found – " + numWeakAuthItems;
+            var old_elem_numWeakAuthItems	= document.getElementById('num_weak_auth_items');
+            var new_elem_numWeakAuthItems 	= old_elem_numWeakAuthItems.cloneNode();
+            new_elem_numWeakAuthItems.appendChild(document.createTextNode(lbl_numWeakAuthItems));
+            old_elem_numWeakAuthItems.parentNode.replaceChild(new_elem_numWeakAuthItems, old_elem_numWeakAuthItems);
+            
+            var lbl_numWeakProtocolItems 		= "Number of keychain items with weak protocol found – " + numWeakProtocolItems;
+            var old_elem_numWeakProtocolItems 	= document.getElementById('num_weak_protocol_items');
+            var new_elem_numWeakProtocolItems 	= old_elem_numWeakProtocolItems.cloneNode();
+            new_elem_numWeakProtocolItems.appendChild(document.createTextNode(lbl_numWeakProtocolItems));
+            old_elem_numWeakProtocolItems.parentNode.replaceChild(new_elem_numWeakProtocolItems, old_elem_numWeakProtocolItems);
+            
+            var lbl_numWeakKeyLengthItems 		= "Number of keychain items with weak keys found – " + numWeakKeyLengthItems;
+            var old_elem_numWeakKeyLengthItems	= document.getElementById('num_weak_keylength_items');
+            var new_elem_numWeakKeyLengthItems 	= old_elem_numWeakKeyLengthItems.cloneNode();
+            new_elem_numWeakKeyLengthItems.appendChild(document.createTextNode(lbl_numWeakKeyLengthItems));
+            old_elem_numWeakKeyLengthItems.parentNode.replaceChild(new_elem_numWeakKeyLengthItems, old_elem_numWeakKeyLengthItems);
+            
+            var lbl_numWeakAccessibilityItems 		= "Number of keychain items with insecure accessibility controls found – " + numWeakAccessibilityItems;
+            var old_elem_numWeakAccessibilityItems 	= document.getElementById('num_weak_accessibility_items');
+            var new_elem_numWeakAccessibilityItems 	= old_elem_numWeakAccessibilityItems.cloneNode();
+            new_elem_numWeakAccessibilityItems.appendChild(document.createTextNode(lbl_numWeakAccessibilityItems));
+            old_elem_numWeakAccessibilityItems.parentNode.replaceChild(new_elem_numWeakAccessibilityItems, old_elem_numWeakAccessibilityItems);
+            
+            return;
+        }
+        
+        function checkAndAddNoItemsFoundRow(objCheck, old_data_table, new_data_table)
+        {
+            if ( ("undefined" === typeof objCheck) )
+            {
+                //No checks found
+                addNoItemsFoundRow(new_data_table);
+                return true;
+            }
+            
+            arrData = objCheck;
+            
+            if ( ("undefined" === typeof arrData) || (0 == arrData.length)	)
+            {
+                //No results for the check
+                addNoItemsFoundRow(new_data_table);
+                return true;
+            }
+            
+            return false;
+        }
+        
+        function addNoItemsFoundRow(new_data_table)
+        {
+            var trNewRow = document.createElement('tr');
+            
+            var tdNoData = document.createElement('td');
+            tdNoData.colSpan = "4"; //Span all 4 columns
+            tdNoData.appendChild(document.createTextNode("No items found"));
+            trNewRow.appendChild(tdNoData);
+            
+            new_data_table.appendChild(trNewRow);
+            
+            return;
+        }
+        
+        function addWeakPasswordCheckResults(objCheck, old_data_table)
+        {
+            var new_data_table = old_data_table.cloneNode();
+            
+            addTableHeaders(new_data_table);
+            
+            var zeroResultItems = checkAndAddNoItemsFoundRow(objCheck, old_data_table, new_data_table);
+            
+            if (false == zeroResultItems)
+            {
+                arrData = objCheck;
+                for(i = 0; i < arrData.length; i++)
+                {
+                    var keychainItem = arrData[i];
+                    weakPassword_addTableRow(new_data_table, keychainItem, i);
+                }
+            }
+            
+            old_data_table.parentNode.replaceChild(new_data_table, old_data_table);
+            
+            return;
+        }
+        
+        function addWeakAuthCheckResults(objCheck, old_data_table)
+        {
+            var new_data_table = old_data_table.cloneNode();
+            
+            addTableHeaders(new_data_table);
+            
+            var zeroResultItems = checkAndAddNoItemsFoundRow(objCheck, old_data_table, new_data_table);
+            
+            if (false == zeroResultItems)
+            {
+                arrData = objCheck;
+                for(i = 0; i < arrData.length; i++)
+                {
+                    var keychainItem = arrData[i];
+                    weakAuth_addTableRow(new_data_table, keychainItem, i);
+                }
+            }
+            
+            old_data_table.parentNode.replaceChild(new_data_table, old_data_table);
+            
+            return;
+        }
+        
+        function addWeakProtocolsCheckResults(objCheck, old_data_table)
+        {
+            var new_data_table = old_data_table.cloneNode();
+            
+            addTableHeaders(new_data_table);
+            
+            var zeroResultItems = checkAndAddNoItemsFoundRow(objCheck, old_data_table, new_data_table);
+            
+            if (false == zeroResultItems)
+            {
+                arrData = objCheck;
+                for(i = 0; i < arrData.length; i++)
+                {
+                    var keychainItem = arrData[i];
+                    weakProtocol_addTableRow(new_data_table, keychainItem, i);
+                }
+            }
+            
+            old_data_table.parentNode.replaceChild(new_data_table, old_data_table);
+            
+            return;
+        }
+        
+        
+        function addWeakKeysCheckResults(objCheck, old_data_table)
+        {
+            var new_data_table = old_data_table.cloneNode();
+            
+            addTableHeaders(new_data_table);
+            
+            var zeroResultItems = checkAndAddNoItemsFoundRow(objCheck, old_data_table, new_data_table);
+            
+            if (false == zeroResultItems)
+            {
+                arrData = objCheck;
+                for(i = 0; i < arrData.length; i++)
+                {
+                    var keychainItem = arrData[i];
+                    weakKeys_addTableRow(new_data_table, keychainItem, i);
+                }
+            }
+            
+            old_data_table.parentNode.replaceChild(new_data_table, old_data_table);
+            
+            return;
+        }
+        
+        function addWeakAccessibilityCheckResults(objCheck, old_data_table)
+        {
+            var new_data_table = old_data_table.cloneNode();
+            
+            addTableHeaders(new_data_table);
+            
+            var zeroResultItems = checkAndAddNoItemsFoundRow(objCheck, old_data_table, new_data_table);
+            
+            if (false == zeroResultItems)
+            {
+                arrData = objCheck;
+                for(i = 0; i < arrData.length; i++)
+                {
+                    var keychainItem = arrData[i];
+                    weakAccessibility_addTableRow(new_data_table, keychainItem, i);
+                }
+            }
+            
+            old_data_table.parentNode.replaceChild(new_data_table, old_data_table);
+            
+            return;
+        }
+        
+        function addTableHeaders(new_gen_pass_data_table)
+        {
+            var numColHeader = "#";
+            var typeColHeader = "Keychain Item Type";
+            var dataColHeader = "Keychain Item Data";
+            var descColHeader = "Keychain Item Description";
+            
+            var trHeaderRow = document.createElement('tr');
+            trHeaderRow.className = "fsstyletableheader";
+            
+            var tdNumColHeader = document.createElement('td');
+            tdNumColHeader.width = col1_width;
+            tdNumColHeader.appendChild(document.createTextNode(numColHeader));
+            trHeaderRow.appendChild(tdNumColHeader);
+            
+            var tdtypeColHeader = document.createElement('td');
+            tdtypeColHeader.width = col2_width;
+            tdtypeColHeader.appendChild(document.createTextNode(typeColHeader));
+            trHeaderRow.appendChild(tdtypeColHeader);
+            
+            var tdDataColHeader = document.createElement('td');
+            tdDataColHeader.width = col3_width;
+            tdDataColHeader.appendChild(document.createTextNode(dataColHeader));
+            trHeaderRow.appendChild(tdDataColHeader);
+            
+            var tdDescColHeader = document.createElement('td');
+            tdDescColHeader.width = col4_width;
+            tdDescColHeader.appendChild(document.createTextNode(descColHeader));
+            trHeaderRow.appendChild(tdDescColHeader);
+            
+            new_gen_pass_data_table.appendChild(trHeaderRow);
+            
+            return;
+        }
+        
+        function weakPassword_addTableRow(new_data_table, keychainItem, i)
+        {
+            var service;
+            var domain;
+            var server;
+            var path;
+            var port;
+            var protocol;
+            var authtype;
+            
+            var itemType = keychainItem.ResultItemType;
+            
+            if ("GenericPassword" == itemType)
+            {
+                service  	= "Service: " 		+ keychainItem.Service;
+            }
+            if ("InternetPassword" == itemType)
+            {
+                domain   	= "Domain: " 		+ keychainItem.Domain;
+                server   	= "Server: " 		+ keychainItem.Server;
+                path 	 	= "Path: "		 	+ keychainItem.Path;
+                port 	 	= "Port: " 			+ keychainItem.Port;
+                protocol 	= "Protocol: " 		+ keychainItem.Protocol;
+                authtype 	= "Auth. Type: " 	+ keychainItem.AuthenticationType;
+            }
+            
+            var username 	= "User: " 			+ keychainItem.Account;
+            var password 	= "Password: " 		+ keychainItem.Password;
+            
+            var label 		= "Label: " 		+ keychainItem.Label;
+            var comment 	= "Comment: " 		+ keychainItem.Comment;
+            var description = "Description: " 	+ keychainItem.Description;
+            
+            var trNewRow = document.createElement('tr');
+            
+            var tdNumData = document.createElement('td');
+            tdNumData.width = col1_width;
+            tdNumData.appendChild(document.createTextNode(i+1));
+            trNewRow.appendChild(tdNumData);
+            
+            var tdTypeData = document.createElement('td');
+            tdTypeData.width = col2_width;
+            tdTypeData.appendChild(document.createTextNode(itemType));
+            trNewRow.appendChild(tdTypeData);
+            
+            var tdItemData = document.createElement('td');
+            tdItemData.width = col3_width;
+            if ("GenericPassword" == itemType)
+            {
+                tdItemData.appendChild(document.createTextNode(service));
+                tdItemData.appendChild(document.createElement('br'));
+            }
+            if ("InternetPassword" == itemType)
+            {
+                tdItemData.appendChild(document.createTextNode(domain));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(server));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(path));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(port));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(protocol));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(authtype));
+                tdItemData.appendChild(document.createElement('br'));
+            }
+            
+            tdItemData.appendChild(document.createTextNode(username));
+            tdItemData.appendChild(document.createElement('br'));
+            
+            var tdPassItem = document.createElement('span');
+            tdPassItem.style.backgroundColor = "yellow";
+            tdPassItem.appendChild(document.createTextNode(password));
+            tdItemData.appendChild(tdPassItem);
+            trNewRow.appendChild(tdItemData);
+            
+            var tdDescData = document.createElement('td');
+            tdDescData.width = col4_width;
+            tdDescData.appendChild(document.createTextNode(label));
+            tdDescData.appendChild(document.createElement('br'));
+            tdDescData.appendChild(document.createTextNode(comment));
+            tdDescData.appendChild(document.createElement('br'));
+            tdDescData.appendChild(document.createTextNode(description));
+            trNewRow.appendChild(tdDescData);
+            
+            new_data_table.appendChild(trNewRow);
+            
+            return;
+        }
+        
+        function weakAuth_addTableRow(new_data_table, keychainItem, i)
+        {
+            var domain   	= "Domain: " 		+ keychainItem.Domain;
+            var server   	= "Server: " 		+ keychainItem.Server;
+            var path 	 	= "Path: "		 	+ keychainItem.Path;
+            var port 	 	= "Port: " 			+ keychainItem.Port;
+            var protocol 	= "Protocol: " 		+ keychainItem.Protocol;
+            var authtype 	= "Auth. Type: " 	+ keychainItem.AuthenticationType;
+            var username 	= "User: " 			+ keychainItem.Account;
+            var password 	= "Password: " 		+ keychainItem.Password;
+            var label 		= "Label: " 		+ keychainItem.Label;
+            var comment 	= "Comment: " 		+ keychainItem.Comment;
+            var description = "Description: " 	+ keychainItem.Description;
+            
+            var itemType = keychainItem.ResultItemType
+            
+            var trNewRow = document.createElement('tr');
+            
+            var tdNumData = document.createElement('td');
+            tdNumData.width = col1_width;
+            tdNumData.appendChild(document.createTextNode(i+1));
+            trNewRow.appendChild(tdNumData);
+            
+            var tdTypeData = document.createElement('td');
+            tdTypeData.width = col2_width;
+            tdTypeData.appendChild(document.createTextNode(itemType));
+            trNewRow.appendChild(tdTypeData);
+            
+            var tdItemData = document.createElement('td');
+            tdItemData.width = col3_width;
+            tdItemData.appendChild(document.createTextNode(domain));
+            tdItemData.appendChild(document.createElement('br'));
+            tdItemData.appendChild(document.createTextNode(server));
+            tdItemData.appendChild(document.createElement('br'));
+            tdItemData.appendChild(document.createTextNode(path));
+            tdItemData.appendChild(document.createElement('br'));
+            tdItemData.appendChild(document.createTextNode(port));
+            tdItemData.appendChild(document.createElement('br'));
+            tdItemData.appendChild(document.createTextNode(protocol));
+            tdItemData.appendChild(document.createElement('br'));
+            
+            var spAuthItem = document.createElement('span');
+            spAuthItem.style.backgroundColor = "yellow";
+            spAuthItem.appendChild(document.createTextNode(authtype));
+            tdItemData.appendChild(spAuthItem);
+            
+            tdItemData.appendChild(document.createElement('br'));
+            tdItemData.appendChild(document.createTextNode(username));
+            tdItemData.appendChild(document.createElement('br'));
+            tdItemData.appendChild(document.createTextNode(password));
+            trNewRow.appendChild(tdItemData);
+            
+            var tdDescData = document.createElement('td');
+            tdDescData.width = col4_width;
+            tdDescData.appendChild(document.createTextNode(label));
+            tdDescData.appendChild(document.createElement('br'));
+            tdDescData.appendChild(document.createTextNode(comment));
+            tdDescData.appendChild(document.createElement('br'));
+            tdDescData.appendChild(document.createTextNode(description));
+            trNewRow.appendChild(tdDescData);
+            
+            new_data_table.appendChild(trNewRow);
+            
+            return;
+        }
+        
+        function weakProtocol_addTableRow(new_data_table, keychainItem, i)
+        {
+            var domain   	= "Domain: " 		+ keychainItem.Domain;
+            var server   	= "Server: " 		+ keychainItem.Server;
+            var path 	 	= "Path: "		 	+ keychainItem.Path;
+            var port 	 	= "Port: " 			+ keychainItem.Port;
+            var protocol 	= "Protocol: " 		+ keychainItem.Protocol;
+            var authtype 	= "Auth. Type: " 	+ keychainItem.AuthenticationType;
+            var username 	= "User: " 			+ keychainItem.Account;
+            var password 	= "Password: " 		+ keychainItem.Password;
+            var label 		= "Label: " 		+ keychainItem.Label;
+            var comment 	= "Comment: " 		+ keychainItem.Comment;
+            var description = "Description: " 	+ keychainItem.Description;
+            
+            var itemType = keychainItem.ResultItemType
+            
+            var trNewRow = document.createElement('tr');
+            
+            var tdNumData = document.createElement('td');
+            tdNumData.width = col1_width;
+            tdNumData.appendChild(document.createTextNode(i+1));
+            trNewRow.appendChild(tdNumData);
+            
+            var tdTypeData = document.createElement('td');
+            tdTypeData.width = col2_width;
+            tdTypeData.appendChild(document.createTextNode(itemType));
+            trNewRow.appendChild(tdTypeData);
+            
+            var tdItemData = document.createElement('td');
+            tdItemData.width = col3_width;
+            tdItemData.appendChild(document.createTextNode(domain));
+            tdItemData.appendChild(document.createElement('br'));
+            tdItemData.appendChild(document.createTextNode(server));
+            tdItemData.appendChild(document.createElement('br'));
+            tdItemData.appendChild(document.createTextNode(path));
+            tdItemData.appendChild(document.createElement('br'));
+            
+            var spPortItem = document.createElement('span');
+            spPortItem.style.backgroundColor = "yellow";
+            spPortItem.appendChild(document.createTextNode(port));
+            tdItemData.appendChild(spPortItem);
+            
+            tdItemData.appendChild(document.createElement('br'));
+            
+            var spProtocolItem = document.createElement('span');
+            spProtocolItem.style.backgroundColor = "yellow";
+            spProtocolItem.appendChild(document.createTextNode(protocol));
+            tdItemData.appendChild(spProtocolItem);
+            
+            tdItemData.appendChild(document.createElement('br'));
+            tdItemData.appendChild(document.createTextNode(authtype));
+            tdItemData.appendChild(document.createElement('br'));
+            tdItemData.appendChild(document.createTextNode(username));
+            tdItemData.appendChild(document.createElement('br'));
+            tdItemData.appendChild(document.createTextNode(password));
+            
+            trNewRow.appendChild(tdItemData);
+            
+            var tdDescData = document.createElement('td');
+            tdDescData.width = col4_width;
+            tdDescData.appendChild(document.createTextNode(label));
+            tdDescData.appendChild(document.createElement('br'));
+            tdDescData.appendChild(document.createTextNode(comment));
+            tdDescData.appendChild(document.createElement('br'));
+            tdDescData.appendChild(document.createTextNode(description));
+            trNewRow.appendChild(tdDescData);
+            
+            new_data_table.appendChild(trNewRow);
+            
+            return;
+        }
+        
+        function weakKeys_addTableRow(new_data_table, keychainItem, i)
+        {
+            var keyclass 		= "Class: " 				+ keychainItem.KeyClass;
+            var keytype  		= "Type: " 					+ keychainItem.KeyType;
+            var keysize 		= "Length (in bits): " 		+ keychainItem.KeySizeInBits;
+            var effkeysize 		= "Eff. Len. (in bits): " 	+ keychainItem.EffectiveKeySizeInBits;
+            var keyval			= "Key: "					+ keychainItem.Key;
+            
+            var label 			= "Label: " 				+ keychainItem.Label;
+            var comment 		= "Comment: " 				+ keychainItem.Comment;
+            var description 	= "Description: " 			+ keychainItem.Description;
+            
+            var itemType 		= keychainItem.ResultItemType;
+            
+            
+            var trNewRow = document.createElement('tr');
+            
+            var tdNumData = document.createElement('td');
+            tdNumData.width = col1_width;
+            tdNumData.appendChild(document.createTextNode(i+1));
+            trNewRow.appendChild(tdNumData);
+            
+            var tdTypeData = document.createElement('td');
+            tdTypeData.width = col2_width;
+            tdTypeData.appendChild(document.createTextNode(itemType));
+            trNewRow.appendChild(tdTypeData);
+            
+            var tdItemData = document.createElement('td');
+            tdItemData.width = col3_width;
+            tdItemData.appendChild(document.createTextNode(keyclass));
+            tdItemData.appendChild(document.createElement('br'));
+            tdItemData.appendChild(document.createTextNode(keytype));
+            tdItemData.appendChild(document.createElement('br'));
+            
+            var spKeySize = document.createElement('span');
+            spKeySize.style.backgroundColor = "yellow";
+            spKeySize.appendChild(document.createTextNode(keysize));
+            tdItemData.appendChild(spKeySize);
+            
+            tdItemData.appendChild(document.createElement('br'));
+            tdItemData.appendChild(document.createTextNode(effkeysize));
+            tdItemData.appendChild(document.createElement('br'));
+            
+            var spKeyVal = document.createElement('span');
+            spKeyVal.style.backgroundColor = "yellow";
+            spKeyVal.appendChild(document.createTextNode(keyval));
+            tdItemData.appendChild(spKeyVal);
+            
+            trNewRow.appendChild(tdItemData);
+            
+            var tdDescData = document.createElement('td');
+            tdDescData.width = col4_width;
+            tdDescData.appendChild(document.createTextNode(label));
+            tdDescData.appendChild(document.createElement('br'));
+            tdDescData.appendChild(document.createTextNode(comment));
+            tdDescData.appendChild(document.createElement('br'));
+            tdDescData.appendChild(document.createTextNode(description));
+            trNewRow.appendChild(tdDescData);
+            
+            new_data_table.appendChild(trNewRow);
+            
+            return;
+        }
+        
+        function weakAccessibility_addTableRow(new_data_table, keychainItem, i)
+        {
+            var itemType 		= keychainItem.ResultItemType;
+            
+            if ("GenericPassword" == itemType)
+            {
+                var service  	= "Service: " 					+ keychainItem.Service;
+                var username 	= "User: " 						+ keychainItem.Account;
+                var password 	= "Password: " 					+ keychainItem.Password;
+            }
+            
+            if ("InternetPassword" == itemType)
+            {
+                var domain   	= "Domain: " 					+ keychainItem.Domain;
+                var server   	= "Server: " 					+ keychainItem.Server;
+                var path 	 	= "Path: "		 				+ keychainItem.Path;
+                var port 	 	= "Port: " 						+ keychainItem.Port;
+                var protocol 	= "Protocol: " 					+ keychainItem.Protocol;
+                var authtype 	= "Auth. Type: " 				+ keychainItem.AuthenticationType;
+            }
+            
+            if("Certificate" == itemType)
+            {
+                var subject 		= "Subject: " 				+ keychainItem.Summary;
+                var certtype  		= "Certificate Type: " 		+ keychainItem.CertificateType;
+                var encoding 		= "Certificate Encoding: " 	+ keychainItem.CertificateEncoding;
+                var serialnum 		= "Serial #: " 				+ keychainItem.SerialNumber;
+                var subjectkeyid 	= "Subject Key Id: " 		+ keychainItem.SubjectKeyId;
+                var publickeyhash 	= "Public Key Hash: " 		+ keychainItem.PublicKeyHash;
+            }
+            
+            if("Key" == itemType)
+            {
+                var keyclass 		= "Class: " 				+ keychainItem.KeyClass;
+                var keytype  		= "Type: " 					+ keychainItem.KeyType;
+                var keysize 		= "Length (in bits): " 		+ keychainItem.KeySizeInBits;
+                var effkeysize 		= "Eff. Len. (in bits): " 	+ keychainItem.EffectiveKeySizeInBits;
+                var keyval			= "Key: "					+ keychainItem.Key;
+            }
+            
+            if("Identity" == itemType)
+            {
+                var subject 		= "Subject: " 				+ keychainItem.Summary;
+                var subjectkeyid 	= "Subject Key Id: " 		+ keychainItem.SubjectKeyId;
+                var publickeyhash 	= "Public Key Hash: " 		+ keychainItem.PublicKeyHash;
+                var keyclass 		= "Class: " 				+ keychainItem.KeyClass;
+                var keytype  		= "Type: " 					+ keychainItem.KeyType;
+                var keysize 		= "Length (in bits): " 		+ keychainItem.KeySizeInBits;
+                var keyval			= "Key: "					+ keychainItem.Key;
+            }
+            
+            var accessibility 		= "Can be accessed: " 		+ keychainItem.Accessible;
+			
+            var label	 			= "Label: " 				+ keychainItem.Label;
+            var comment 			= "Comment: " 				+ keychainItem.Comment;
+            var description 		= "Description: " 			+ keychainItem.Description;
+            
+            
+            var trNewRow = document.createElement('tr');
+            
+            var tdNumData = document.createElement('td');
+            tdNumData.width = col1_width;
+            tdNumData.appendChild(document.createTextNode(i+1));
+            trNewRow.appendChild(tdNumData);
+            
+            var tdTypeData = document.createElement('td');
+            tdTypeData.width = col2_width;
+            tdTypeData.appendChild(document.createTextNode(itemType));
+            trNewRow.appendChild(tdTypeData);
+            
+            var tdItemData = document.createElement('td');
+            tdItemData.width = col3_width;
+            
+            if ("GenericPassword" == itemType)
+            {
+                tdItemData.appendChild(document.createTextNode(service));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(username));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(password));
+            }
+            if("InternetPassword" == itemType)
+            {
+                tdItemData.appendChild(document.createTextNode(domain));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(server));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(path));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(port));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(protocol));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(authtype));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(username));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(password));
+            }
+            if ("Certificate" == itemType)
+            {
+                tdItemData.appendChild(document.createTextNode(subject));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(certtype));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(encoding));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(serialnum));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(subjectkeyid));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(publickeyhash));
+            }
+            if ("Key" == itemType)
+            {
+                tdItemData.appendChild(document.createTextNode(keyclass));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(keytype));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(keysize));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(effkeysize));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(keyval));
+            }
+            if ("Identity" == itemType)
+            {
+                tdItemData.appendChild(document.createTextNode(subject));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(subjectkeyid));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(publickeyhash));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(keyclass));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(keytype));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(keysize));
+                tdItemData.appendChild(document.createElement('br'));
+                tdItemData.appendChild(document.createTextNode(keyval));
+            }
+            
+            tdItemData.appendChild(document.createElement('br'));
+            var spAccessibility = document.createElement('span');
+            spAccessibility.style.backgroundColor = "yellow";
+            spAccessibility.appendChild(document.createTextNode(accessibility));
+            tdItemData.appendChild(spAccessibility);
+            
+            trNewRow.appendChild(tdItemData);
+            
+            var tdDescData = document.createElement('td');
+            tdDescData.width = col4_width;
+            tdDescData.appendChild(document.createTextNode(label));
+            tdDescData.appendChild(document.createElement('br'));
+            tdDescData.appendChild(document.createTextNode(comment));
+            tdDescData.appendChild(document.createElement('br'));
+            tdDescData.appendChild(document.createTextNode(description));
+            trNewRow.appendChild(tdDescData);
+            
+            new_data_table.appendChild(trNewRow);
+            
+            return;
+        }
+        </script>
+    
+</html>

@@ -1,0 +1,1158 @@
+<html>
+    
+    <head>
+        <meta name=Title content="Keychain Data Export Report">
+            <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+                <style>
+                    <!--
+                    /* Font Definitions */
+                    @font-face
+                    {font-family:Arial;
+                        panose-1:2 11 6 4 2 2 2 2 2 4;}
+                    @font-face
+                    {font-family:Arial;
+                        panose-1:2 11 6 4 2 2 2 2 2 4;}
+                    @font-face
+                    {font-family:"MS Mincho";}
+                    @font-face
+                    {font-family:Tahoma;
+                        panose-1:2 11 6 4 3 5 4 4 2 4;}
+                    @font-face
+                    {font-family:"Lucida Grande";
+                        panose-1:2 11 6 0 4 5 2 2 2 4;}
+                    /* Style Definitions */
+                    
+                    p.MsoNormal, li.MsoNormal, div.MsoNormal
+                    {margin:0in;
+                        margin-bottom:.0001pt;
+                        font-size:10.0pt;
+                        font-family:Tahoma;}
+                    h1
+                    {margin-top:12.0pt;
+                        margin-right:0in;
+                        margin-bottom:3.0pt;
+                        margin-left:0in;
+                        page-break-before:always;
+                        font-size:12.0pt;
+                        font-family:Arial;
+                        color:#DB0029;}
+                    h2
+                    {margin-top:12.0pt;
+                        margin-right:0in;
+                        margin-bottom:3.0pt;
+                        margin-left:0in;
+                        font-size:12.0pt;
+                        font-family:Arial;}
+                    p.MsoFooter, li.MsoFooter, div.MsoFooter
+                    {margin:0in;
+                        margin-bottom:.0001pt;
+                        font-size:10.0pt;
+                        font-family:Tahoma;
+                        color:red;}
+                    span.Heading1Char
+                    {font-family:Arial;
+                        color:#DB0029;
+                        font-weight:bold;}
+                    span.Heading2Char
+                    {font-family:Arial;
+                        font-weight:bold;}
+                    span.HeaderChar
+                    {font-family:Tahoma;}
+                    span.FooterChar
+                    {font-family:Tahoma;}
+                    span.BalloonTextChar
+                    {font-family:"Lucida Grande";}
+                    .MsoChpDefault
+                    {font-family:Cambria;}
+                    
+                    table.fsstyle {
+                        border-collapse:collapse;
+                        border:solid windowtext 1.0pt;
+                        border-left:solid windowtext 1.0pt;
+                        padding:0in 5.4pt 0in 5.4pt;
+                        margin:0in;
+                        font-size:10.0pt;
+                        font-family:Tahoma;
+                    }
+                    
+                    .fsstyletableheader {
+                        font-weight:bold;
+                    }
+                    
+                    table.fsstyle tr:nth-child(odd) td {
+                        border:solid windowtext 1.0pt;
+                        border-left:solid windowtext 1.0pt;
+                        background:#E6E6E6;
+                        padding:0in 5.4pt 0in 5.4pt;
+                        margin:0in;
+                        font-size:10.0pt;
+                        font-family:Tahoma;
+                    }
+                    
+                    table.fsstyle tr:nth-child(even) td {
+                        border:solid windowtext 1.0pt;
+                        border-left:solid windowtext 1.0pt;
+                        margin:0in;
+                        padding:0in 5.4pt 0in 5.4pt;
+                        font-size:10.0pt;
+                        font-family:Tahoma;
+                    }
+                    
+                    
+                    /* Page Definitions */
+                    @page WordSection1
+                    {size:8.5in 11.0in;
+                        margin:1.0in 1.25in 1.0in 1.25in;}
+                    div.WordSection1
+                    {page:WordSection1;}
+                    /* List Definitions */
+                    
+                    ol
+                    {margin-bottom:0in;}
+                    ul
+                    {margin-bottom:0in;}
+                    -->
+                    </style>
+                
+                <img src="fs_header_image.jpg" alt="Foundstone Header Image" width="1050" />
+                
+    </head>
+    
+    <body lang=EN-US>
+        
+        <div class=WordSection1>
+            <p class=MsoNormal>&nbsp;</p>
+            <div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+                <h1>Keychain Data Export</h1>
+            </div>
+            <p class=MsoNormal style='font-size:10.0pt; font-family:Tahoma'>
+            Following is the keychain data export report. It includes details of the identified keychain items along with their attributes.
+            <BR/>The raw keychain data can be found in the "KeychainDataExport.jsonp" file.
+            </p>
+            <p class=MsoNormal>&nbsp;</p>
+            
+            <div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+                
+                <h2 style='border:none;padding:0in'>Summary</h2>
+                
+            </div>
+            
+            <ol style='margin-top:0in' start=1 type=1>
+                <li id="num_generic_pass" class=MsoNormal>Number of generic passwords found – </li>
+                <li id="num_internet_pass" class=MsoNormal>Number of internet passwords found –</li>
+                <li id="num_certs" class=MsoNormal>Number of certificates found –</li>
+                <li id="num_keys" class=MsoNormal>Number of keys found –</li>
+                <li id="num_identity" class=MsoNormal>Number of identities found –</li>
+            </ol>
+            
+            <p class=MsoNormal>&nbsp;</p>
+            <div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+                <h2 style='border:none;padding:0in'>Generic Password Details</h2>
+            </div>
+            <p class=MsoNormal>&nbsp;</p>
+            <table id="generic_pass_data_table" class="fsstyle"></table>
+            
+            <p class=MsoNormal>&nbsp;</p>
+            <div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+                <h2 style='border:none;padding:0in'>Internet Password Details</h2>
+            </div>
+            <p class=MsoNormal>&nbsp;</p>
+            <table id="internet_pass_data_table" class="fsstyle"></table>
+            
+            <p class=MsoNormal>&nbsp;</p>
+            <div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+                <h2 style='border:none;padding:0in'>Certificate Details</h2>
+            </div>
+            <p class=MsoNormal>&nbsp;</p>
+            <table id="certificate_data_table" class="fsstyle"></table>
+            
+            <p class=MsoNormal>&nbsp;</p>
+            <div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+                <h2 style='border:none;padding:0in'>Key Details</h2>
+            </div>
+            <p class=MsoNormal>&nbsp;</p>
+            <table id="key_data_table" class="fsstyle"></table>
+            
+            <p class=MsoNormal>&nbsp;</p>
+            <div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+                <h2 style='border:none;padding:0in'>Identity Details</h2>
+            </div>
+            <p class=MsoNormal>&nbsp;</p>
+            <table id="identity_data_table" class="fsstyle"></table>
+            <p class=MsoNormal>&nbsp;</p>
+            
+            <p class=MsoNormal>&nbsp;</p>
+            <div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+            </div>
+            <p class=MsoFooter>
+            www.foundstone.com
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Copyright 2012 McAfee, Inc.
+            </p>
+            <p class=MsoNormal style='align:right'></p>
+            <p class=MsoNormal>&nbsp;</p>
+            
+        </div>
+        
+    </body>
+    
+    <script language = "javascript">
+        
+        //Load the JSONP with the data
+        var head= document.getElementsByTagName('head')[0];
+        var script= document.createElement('script');
+        script.type= 'application/x-javascript';
+        script.src= "KeychainDataExport.jsonp";
+        head.appendChild(script);
+        
+        var col1_width = 25;
+        var col2_width = 200;
+        var col3_width = 175;
+        var col4_width = 175;
+        var col5_width = 190;
+        var col6_width = 180;
+        
+        function displayJSONData(parsedJSONData)
+        {
+            //Update the summary data
+            updateSummaryData(parsedJSONData);
+            
+            //Add generic passwords table
+            var arrGenericPasswords = parsedJSONData.GenericPasswords;
+            addGenericPasswordDetails(arrGenericPasswords);
+            
+            //Add internet passwords table
+            var arrInternetPasswords = parsedJSONData.InternetPasswords;
+            addInternetPasswordDetails(arrInternetPasswords);
+            
+            //Add certificates table
+            var arrCerts = parsedJSONData.Certificates;
+            addCertificateDetails(arrCerts);
+            
+            //Add keys table
+            var arrKeys = parsedJSONData.Keys;
+            addKeyDetails(arrKeys);
+            
+            //Add identities table
+            var arrIdentity = parsedJSONData.Identities;
+            addIdentityDetails(arrIdentity);
+            
+            return;
+        }
+        
+        function updateSummaryData(parsedJSONData)
+        {
+            var numGenericPasswords 	= 0;
+            var numInternetPasswords 	= 0;
+            var numCerts 				= 0;
+            var numKeys 				= 0;
+            var numIdentity 			= 0;
+            
+            var arrGenericPasswords     = parsedJSONData.GenericPasswords;
+            var arrInternetPasswords    = parsedJSONData.InternetPasswords;
+            var arrCerts                = parsedJSONData.Certificates;
+            var arrKeys                 = parsedJSONData.Keys;
+            var arrIdentity             = parsedJSONData.Identities;
+            
+            //No generic passwords present in keychain
+            if ( ("undefined" !== typeof arrGenericPasswords) && (0 < arrGenericPasswords.length) )
+            numGenericPasswords = arrGenericPasswords.length;
+            
+            //No internet passwords present in keychain
+            if ( ("undefined" !== typeof arrInternetPasswords) && (0 < arrInternetPasswords.length) )
+            numInternetPasswords = arrInternetPasswords.length;
+            
+            //No certificates present in keychain
+            if ( ("undefined" !== typeof arrCerts) && (0 < arrCerts.length) )
+            numCerts = arrCerts.length;
+            
+            //No keys present in keychain
+            if ( ("undefined" !== typeof arrKeys) && (0 < arrKeys.length) )
+            numKeys = arrKeys.length;
+            
+            //No identities present in keychain
+            if ( ("undefined" !== typeof arrIdentity) && (0 < arrIdentity.length) )
+            numIdentity = arrIdentity.length;
+            
+            var lbl_numGenericPasswords = "Number of generic passwords found - " + numGenericPasswords;
+            var old_elem_numGenericPasswords = document.getElementById('num_generic_pass');
+            var new_elem_numGenericPasswords = old_elem_numGenericPasswords.cloneNode();
+            new_elem_numGenericPasswords.appendChild(document.createTextNode(lbl_numGenericPasswords));
+            old_elem_numGenericPasswords.parentNode.replaceChild(new_elem_numGenericPasswords, old_elem_numGenericPasswords);
+            
+            var lbl_numGenericPasswords = "Number of internet passwords found – " + numInternetPasswords;
+            var old_elem_numInternetPasswords = document.getElementById('num_internet_pass');
+            var new_elem_numInternetPasswords = old_elem_numInternetPasswords.cloneNode();
+            new_elem_numInternetPasswords.appendChild(document.createTextNode(lbl_numGenericPasswords));
+            old_elem_numInternetPasswords.parentNode.replaceChild(new_elem_numInternetPasswords, old_elem_numInternetPasswords);
+            
+            var lbl_numCerts = "Number of certificates found – " + numCerts;
+            var old_elem_numCerts = document.getElementById('num_certs');
+            var new_elem_numCerts = old_elem_numCerts.cloneNode();
+            new_elem_numCerts.appendChild(document.createTextNode(lbl_numCerts));
+            old_elem_numCerts.parentNode.replaceChild(new_elem_numCerts, old_elem_numCerts);
+            
+            var lbl_numKeys = "Number of keys found – " + numKeys;
+            var old_elem_numKeys = document.getElementById('num_keys');
+            var new_elem_numKeys = old_elem_numKeys.cloneNode();
+            new_elem_numKeys.appendChild(document.createTextNode(lbl_numKeys));
+            old_elem_numKeys.parentNode.replaceChild(new_elem_numKeys, old_elem_numKeys);
+            
+            var lbl_numIdentity = "Number of identities found – " + numIdentity;
+            var old_elem_numIdentity = document.getElementById('num_identity');
+            var new_elem_numIdentity = old_elem_numIdentity.cloneNode();
+            new_elem_numIdentity.appendChild(document.createTextNode(lbl_numIdentity));
+            old_elem_numIdentity.parentNode.replaceChild(new_elem_numIdentity, old_elem_numIdentity);
+            
+            return;
+        }
+        
+        function addGenericPasswordDetails(arrData)
+        {
+            var old_data_table = document.getElementById('generic_pass_data_table');
+            var new_data_table = old_data_table.cloneNode();
+            
+            gp_ip_addTableHeaders(new_data_table);
+            
+            if ( ("undefined" !== typeof arrData) && (0 < arrData.length) )
+            {
+                for(i = 0; i < arrData.length; i++)
+                {
+                    var keychainItem = arrData[i];
+                    gp_addTableRow(new_data_table, keychainItem, i);
+                }
+            }
+            else
+            {
+                //No items found
+                addNoItemsFoundRow(new_data_table);
+            }
+            
+            old_data_table.parentNode.replaceChild(new_data_table, old_data_table);
+            
+            return;
+        }
+        
+        function addInternetPasswordDetails(arrData)
+        {
+            var old_data_table = document.getElementById('internet_pass_data_table');
+            var new_data_table = old_data_table.cloneNode();
+            
+            gp_ip_addTableHeaders(new_data_table);
+            
+            if ( ("undefined" !== typeof arrData) && (0 < arrData.length) )
+            {
+                for(i = 0; i < arrData.length; i++)
+                {
+                    var keychainItem = arrData[i];
+                    ip_addTableRow(new_data_table, keychainItem, i);
+                }
+            }
+            else
+            {
+                //No items found
+                addNoItemsFoundRow(new_data_table);
+            }
+            
+            old_data_table.parentNode.replaceChild(new_data_table, old_data_table);
+            
+            return;
+        }
+        
+        
+        function addCertificateDetails(arrData)
+        {
+            var old_data_table = document.getElementById('certificate_data_table');
+            var new_data_table = old_data_table.cloneNode();
+            
+            cert_addTableHeaders(new_data_table);
+            
+            if ( ("undefined" !== typeof arrData) && (0 < arrData.length) )
+            {
+                for(i = 0; i < arrData.length; i++)
+                {
+                    var keychainItem = arrData[i];
+                    cert_addTableRow(new_data_table, keychainItem, i);
+                }
+            }
+            else
+            {
+                //No items found
+                addNoItemsFoundRow(new_data_table);
+            }
+			
+            old_data_table.parentNode.replaceChild(new_data_table, old_data_table);
+            
+            return;
+        }
+        
+        function addKeyDetails(arrData)
+        {
+            var old_data_table = document.getElementById('key_data_table');
+            var new_data_table = old_data_table.cloneNode();
+            
+            key_addTableHeaders(new_data_table);
+            
+            if ( ("undefined" !== typeof arrData) && (0 < arrData.length) )
+            {
+                for(i = 0; i < arrData.length; i++)
+                {
+                    var keychainItem = arrData[i];
+                    key_addTableRow(new_data_table, keychainItem, i);
+                }
+            }
+            else
+            {
+                //No items found
+                addNoItemsFoundRow(new_data_table);
+            }
+            
+            old_data_table.parentNode.replaceChild(new_data_table, old_data_table);
+            
+            return;
+        }
+        
+        function addIdentityDetails(arrData)
+        {
+            var old_data_table = document.getElementById('identity_data_table');
+            var new_data_table = old_data_table.cloneNode();
+            
+            identity_addTableHeaders(new_data_table);
+            
+            if ( ("undefined" !== typeof arrData) && (0 < arrData.length) )
+            {
+                for(i = 0; i < arrData.length; i++)
+                {
+                    var keychainItem = arrData[i];
+                    identity_addTableRow(new_data_table, keychainItem, i);
+                }
+            }
+            else
+            {
+                //No items found
+                addNoItemsFoundRow(new_data_table);
+            }
+            
+            old_data_table.parentNode.replaceChild(new_data_table, old_data_table);
+            
+            return;
+        }
+        
+        
+        function gp_ip_addTableHeaders(new_gen_pass_data_table)
+        {
+            var numColHeader = "#";
+            var passColHeader = "Password";
+            var accessibilityColHeader = "Accessibility";
+            var descColHeader = "Description";
+            var createdColHeader = "Created / Accessed";
+            var otherColHeader = "Other";
+            
+            var trHeaderRow = document.createElement('tr');
+            trHeaderRow.className = "fsstyletableheader";
+            
+            var tdNumColHeader = document.createElement('td');
+            tdNumColHeader.width = col1_width;
+            tdNumColHeader.appendChild(document.createTextNode(numColHeader));
+            trHeaderRow.appendChild(tdNumColHeader);
+            
+            var tdPassColHeader = document.createElement('td');
+            tdPassColHeader.width = col2_width;
+            tdPassColHeader.appendChild(document.createTextNode(passColHeader));
+            trHeaderRow.appendChild(tdPassColHeader);
+            
+            var tdAccessColHeader = document.createElement('td');
+            tdAccessColHeader.width = col3_width;
+            tdAccessColHeader.appendChild(document.createTextNode(accessibilityColHeader));
+            trHeaderRow.appendChild(tdAccessColHeader);
+            
+            var tdDescColHeader = document.createElement('td');
+            tdDescColHeader.width = col4_width;
+            tdDescColHeader.appendChild(document.createTextNode(descColHeader));
+            trHeaderRow.appendChild(tdDescColHeader);
+            
+            var tdCreatedColHeader = document.createElement('td');
+            tdCreatedColHeader.width = col5_width;
+            tdCreatedColHeader.appendChild(document.createTextNode(createdColHeader));
+            trHeaderRow.appendChild(tdCreatedColHeader);
+            
+            var tdOtherColHeader = document.createElement('td');
+            tdOtherColHeader.width = col6_width;
+            tdOtherColHeader.appendChild(document.createTextNode(otherColHeader));
+            trHeaderRow.appendChild(tdOtherColHeader);
+            
+            new_gen_pass_data_table.appendChild(trHeaderRow);
+            
+            return;
+        }
+        
+        function cert_addTableHeaders(new_gen_pass_data_table)
+        {
+            var numColHeader = "#";
+            var passColHeader = "Certificate";
+            var accessibilityColHeader = "Accessibility";
+            var descColHeader = "Description";
+            var createdColHeader = "Created / Accessed";
+            var otherColHeader = "Other";
+            
+            var trHeaderRow = document.createElement('tr');
+            trHeaderRow.className = "fsstyletableheader";
+            
+            var tdNumColHeader = document.createElement('td');
+            tdNumColHeader.width = col1_width;
+            tdNumColHeader.appendChild(document.createTextNode(numColHeader));
+            trHeaderRow.appendChild(tdNumColHeader);
+            
+            var tdPassColHeader = document.createElement('td');
+            tdPassColHeader.width = col2_width;
+            tdPassColHeader.appendChild(document.createTextNode(passColHeader));
+            trHeaderRow.appendChild(tdPassColHeader);
+            
+            var tdAccessColHeader = document.createElement('td');
+            tdAccessColHeader.width = col3_width;
+            tdAccessColHeader.appendChild(document.createTextNode(accessibilityColHeader));
+            trHeaderRow.appendChild(tdAccessColHeader);
+            
+            var tdDescColHeader = document.createElement('td');
+            tdDescColHeader.width = col4_width;
+            tdDescColHeader.appendChild(document.createTextNode(descColHeader));
+            trHeaderRow.appendChild(tdDescColHeader);
+            
+            var tdCreatedColHeader = document.createElement('td');
+            tdCreatedColHeader.width = col5_width;
+            tdCreatedColHeader.appendChild(document.createTextNode(createdColHeader));
+            trHeaderRow.appendChild(tdCreatedColHeader);
+            
+            var tdOtherColHeader = document.createElement('td');
+            tdOtherColHeader.width = col6_width;
+            tdOtherColHeader.appendChild(document.createTextNode(otherColHeader));
+            trHeaderRow.appendChild(tdOtherColHeader);
+            
+            new_gen_pass_data_table.appendChild(trHeaderRow);
+            
+            return;
+        }
+        
+        function key_addTableHeaders(new_gen_pass_data_table)
+        {
+            var numColHeader = "#";
+            var keyColHeader = "Key";
+            var accessibilityColHeader = "Accessibility";
+            var descColHeader = "Description";
+            var capabilityColHeader = "Capability";
+            var otherColHeader = "Other";
+            
+            var trHeaderRow = document.createElement('tr');
+            trHeaderRow.className = "fsstyletableheader";
+            
+            var tdNumColHeader = document.createElement('td');
+            tdNumColHeader.width = col1_width;
+            tdNumColHeader.appendChild(document.createTextNode(numColHeader));
+            trHeaderRow.appendChild(tdNumColHeader);
+            
+            var tdkeyColHeader = document.createElement('td');
+            tdkeyColHeader.width = col2_width;
+            tdkeyColHeader.appendChild(document.createTextNode(keyColHeader));
+            trHeaderRow.appendChild(tdkeyColHeader);
+            
+            var tdAccessColHeader = document.createElement('td');
+            tdAccessColHeader.width = col3_width;
+            tdAccessColHeader.appendChild(document.createTextNode(accessibilityColHeader));
+            trHeaderRow.appendChild(tdAccessColHeader);
+            
+            var tdDescColHeader = document.createElement('td');
+            tdDescColHeader.width = col4_width;
+            tdDescColHeader.appendChild(document.createTextNode(descColHeader));
+            trHeaderRow.appendChild(tdDescColHeader);
+            
+            var tdcapabilityColHeader = document.createElement('td');
+            tdcapabilityColHeader.width = col5_width;
+            tdcapabilityColHeader.appendChild(document.createTextNode(capabilityColHeader));
+            trHeaderRow.appendChild(tdcapabilityColHeader);
+            
+            var tdOtherColHeader = document.createElement('td');
+            tdOtherColHeader.width = col6_width;
+            tdOtherColHeader.appendChild(document.createTextNode(otherColHeader));
+            trHeaderRow.appendChild(tdOtherColHeader);
+            
+            new_gen_pass_data_table.appendChild(trHeaderRow);
+            
+            return;
+        }
+        
+        function identity_addTableHeaders(new_gen_pass_data_table)
+        {
+            var numColHeader = "#";
+            var certColHeader = "Certificate";
+            var accessibilityColHeader = "Accessibility";
+            var keyColHeader = "Key";
+            var capabilityColHeader = "Capability";
+            var otherColHeader = "Other";
+            
+            var trHeaderRow = document.createElement('tr');
+            trHeaderRow.className = "fsstyletableheader";
+            
+            var tdNumColHeader = document.createElement('td');
+            tdNumColHeader.width = col1_width;
+            tdNumColHeader.appendChild(document.createTextNode(numColHeader));
+            trHeaderRow.appendChild(tdNumColHeader);
+            
+            var tdcertColHeader = document.createElement('td');
+            tdcertColHeader.width = col2_width;
+            tdcertColHeader.appendChild(document.createTextNode(certColHeader));
+            trHeaderRow.appendChild(tdcertColHeader);
+            
+            var tdAccessColHeader = document.createElement('td');
+            tdAccessColHeader.width = col3_width;
+            tdAccessColHeader.appendChild(document.createTextNode(accessibilityColHeader));
+            trHeaderRow.appendChild(tdAccessColHeader);
+            
+            var tdkeyColHeader = document.createElement('td');
+            tdkeyColHeader.width = col4_width;
+            tdkeyColHeader.appendChild(document.createTextNode(keyColHeader));
+            trHeaderRow.appendChild(tdkeyColHeader);
+            
+            var tdcapabilityColHeader = document.createElement('td');
+            tdcapabilityColHeader.width = col5_width;
+            tdcapabilityColHeader.appendChild(document.createTextNode(capabilityColHeader));
+            trHeaderRow.appendChild(tdcapabilityColHeader);
+            
+            var tdOtherColHeader = document.createElement('td');
+            tdOtherColHeader.width = col6_width;
+            tdOtherColHeader.appendChild(document.createTextNode(otherColHeader));
+            trHeaderRow.appendChild(tdOtherColHeader);
+            
+            new_gen_pass_data_table.appendChild(trHeaderRow);
+            
+            return;
+        }
+        
+        
+        function addNoItemsFoundRow(new_data_table)
+        {
+            var trNewRow = document.createElement('tr');
+            
+            var tdNoData = document.createElement('td');
+            tdNoData.colSpan = "6"; //Span all 6 columns
+            tdNoData.appendChild(document.createTextNode("No items found"));
+            trNewRow.appendChild(tdNoData);
+            
+            new_data_table.appendChild(trNewRow);
+            
+            return;
+        }
+        
+        
+        function gp_addTableRow(new_data_table, keychainItem, i)
+        {
+            var service  = "Service: " + keychainItem.Service;
+            var username = "User: " + keychainItem.Account;
+            var password = "Password: " + keychainItem.Password;
+            
+            var accessibility = "Can be accessed: " + keychainItem.Accessible;
+            var accessGroup = "Access Group: " +keychainItem.AccessGroup;
+            
+            var label = "Label: " + keychainItem.Label;
+            var comment = "Comment: " + keychainItem.Comment;
+            var description = "Description: " + keychainItem.Description;
+            var generic = "Generic: " + keychainItem.Generic;
+            
+            var dtCreated = "Created On: " + keychainItem.CreationDate;
+            var dtModified = "Modified On: " + keychainItem.ModificationDate;
+            var creator = "Creator: " + keychainItem.Creator;
+            
+            var type = "Type: " + keychainItem.Type;
+            var isInvisible = "Hidden: " + keychainItem.Invisible;
+            var isNegative = "Password Present: " + keychainItem.Negative;
+            
+            var trNewRow = document.createElement('tr');
+            
+            var tdNumData = document.createElement('td');
+            tdNumData.width = col1_width;
+            tdNumData.appendChild(document.createTextNode(i+1));
+            trNewRow.appendChild(tdNumData);
+            
+            var tdPassData = document.createElement('td');
+            tdPassData.width = col2_width;
+            tdPassData.appendChild(document.createTextNode(service));
+            tdPassData.appendChild(document.createElement('br'));
+            tdPassData.appendChild(document.createTextNode(username));
+            tdPassData.appendChild(document.createElement('br'));
+            tdPassData.appendChild(document.createTextNode(password));
+            trNewRow.appendChild(tdPassData);
+            
+            var tdAccessibilityData = document.createElement('td');
+            tdAccessibilityData.width = col3_width;
+            tdAccessibilityData.appendChild(document.createTextNode(accessibility));
+            tdAccessibilityData.appendChild(document.createElement('br'));
+            tdAccessibilityData.appendChild(document.createTextNode(accessGroup));
+            trNewRow.appendChild(tdAccessibilityData);
+            
+            var tdDescData = document.createElement('td');
+            tdDescData.width = col4_width;
+            tdDescData.appendChild(document.createTextNode(label));
+            tdDescData.appendChild(document.createElement('br'));
+            tdDescData.appendChild(document.createTextNode(comment));
+            tdDescData.appendChild(document.createElement('br'));
+            tdDescData.appendChild(document.createTextNode(description));
+            tdDescData.appendChild(document.createElement('br'));
+            tdDescData.appendChild(document.createTextNode(generic));
+            trNewRow.appendChild(tdDescData);
+            
+            var tdCreationData = document.createElement('td');
+            tdCreationData.width = col5_width;
+            tdCreationData.appendChild(document.createTextNode(dtCreated));
+            tdCreationData.appendChild(document.createElement('br'));
+            tdCreationData.appendChild(document.createTextNode(dtModified));
+            tdCreationData.appendChild(document.createElement('br'));
+            tdCreationData.appendChild(document.createTextNode(creator));
+            trNewRow.appendChild(tdCreationData);
+            
+            var tdOtherData = document.createElement('td');
+            tdOtherData.width = col6_width;
+            tdOtherData.appendChild(document.createTextNode(type));
+            tdOtherData.appendChild(document.createElement('br'));
+            tdOtherData.appendChild(document.createTextNode(isInvisible));
+            tdOtherData.appendChild(document.createElement('br'));
+            tdOtherData.appendChild(document.createTextNode(isNegative));
+            trNewRow.appendChild(tdOtherData);
+            
+            new_data_table.appendChild(trNewRow);
+            
+            return;
+        }
+        
+        function ip_addTableRow(new_data_table, keychainItem, i)
+        {
+            var domain   = "Domain: " + keychainItem.Domain;
+            var server   = "Service: " + keychainItem.Server;
+            var path 	 = "Path: " + keychainItem.Path;
+            var port 	 = "Port: " + keychainItem.Port;
+            var protocol = "Protocol: " + keychainItem.Protocol;
+            var authtype = "Auth. Type: " + keychainItem.AuthenticationType;
+            var username = "User: " + keychainItem.Account;
+            var password = "Password: " + keychainItem.Password;
+            
+            var accessibility = "Can be accessed: " + keychainItem.Accessible;
+            var accessGroup = "Access Group: " +keychainItem.AccessGroup;
+            
+            var label = "Label: " + keychainItem.Label;
+            var comment = "Comment: " + keychainItem.Comment;
+            var description = "Description: " + keychainItem.Description;
+            
+            var dtCreated = "Created On: " + keychainItem.CreationDate;
+            var dtModified = "Modified On: " + keychainItem.ModificationDate;
+            var creator = "Creator: " + keychainItem.Creator;
+            
+            var type = "Type: " + keychainItem.Type;
+            var isInvisible = "Hidden: " + keychainItem.Invisible;
+            var isNegative = "Password Present: " + keychainItem.Negative;
+            
+            var trNewRow = document.createElement('tr');
+            
+            var tdNumData = document.createElement('td');
+            tdNumData.width = col1_width;
+            tdNumData.appendChild(document.createTextNode(i+1));
+            trNewRow.appendChild(tdNumData);
+            
+            var tdPassData = document.createElement('td');
+            tdPassData.width = col2_width;
+            tdPassData.appendChild(document.createTextNode(domain));
+            tdPassData.appendChild(document.createElement('br'));
+            tdPassData.appendChild(document.createTextNode(server));
+            tdPassData.appendChild(document.createElement('br'));
+            tdPassData.appendChild(document.createTextNode(path));
+            tdPassData.appendChild(document.createElement('br'));
+            tdPassData.appendChild(document.createTextNode(port));
+            tdPassData.appendChild(document.createElement('br'));
+            tdPassData.appendChild(document.createTextNode(protocol));
+            tdPassData.appendChild(document.createElement('br'));
+            tdPassData.appendChild(document.createTextNode(authtype));
+            tdPassData.appendChild(document.createElement('br'));
+            tdPassData.appendChild(document.createTextNode(username));
+            tdPassData.appendChild(document.createElement('br'));
+            tdPassData.appendChild(document.createTextNode(password));
+            trNewRow.appendChild(tdPassData);
+            
+            var tdAccessibilityData = document.createElement('td');
+            tdAccessibilityData.width = col3_width;
+            tdAccessibilityData.appendChild(document.createTextNode(accessibility));
+            tdAccessibilityData.appendChild(document.createElement('br'));
+            tdAccessibilityData.appendChild(document.createTextNode(accessGroup));
+            trNewRow.appendChild(tdAccessibilityData);
+            
+            var tdDescData = document.createElement('td');
+            tdDescData.width = col4_width;
+            tdDescData.appendChild(document.createTextNode(label));
+            tdDescData.appendChild(document.createElement('br'));
+            tdDescData.appendChild(document.createTextNode(comment));
+            tdDescData.appendChild(document.createElement('br'));
+            tdDescData.appendChild(document.createTextNode(description));
+            trNewRow.appendChild(tdDescData);
+            
+            var tdCreationData = document.createElement('td');
+            tdCreationData.width = col5_width;
+            tdCreationData.appendChild(document.createTextNode(dtCreated));
+            tdCreationData.appendChild(document.createElement('br'));
+            tdCreationData.appendChild(document.createTextNode(dtModified));
+            tdCreationData.appendChild(document.createElement('br'));
+            tdCreationData.appendChild(document.createTextNode(creator));
+            trNewRow.appendChild(tdCreationData);
+            
+            var tdOtherData = document.createElement('td');
+            tdOtherData.width = col6_width;
+            tdOtherData.appendChild(document.createTextNode(type));
+            tdOtherData.appendChild(document.createElement('br'));
+            tdOtherData.appendChild(document.createTextNode(isInvisible));
+            tdOtherData.appendChild(document.createElement('br'));
+            tdOtherData.appendChild(document.createTextNode(isNegative));
+            trNewRow.appendChild(tdOtherData);
+            
+            new_data_table.appendChild(trNewRow);
+            
+            return;
+        }
+        
+        function cert_addTableRow(new_data_table, keychainItem, i)
+        {
+            var subject = "Subject: " + keychainItem.Summary;
+            var certtype  = "Certificate Type: " + keychainItem.CertificateType;
+            var encoding = "Certificate Encoding: " + keychainItem.CertificateEncoding;
+            var serialnum = "Serial #: " + keychainItem.SerialNumber;
+            var subjectkeyid = "Subject Key Id: " + keychainItem.SubjectKeyId;
+            var publickeyhash = "Public Key Hash: " + keychainItem.PublicKeyHash;
+			
+            var accessibility = "Can be accessed: " + keychainItem.Accessible;
+            var accessGroup = "Access Group: " +keychainItem.AccessGroup;
+            
+            var label = "Label: " + keychainItem.Label;
+            var comment = "Comment: " + keychainItem.Comment;
+            var description = "Description: " + keychainItem.Description;
+            
+            var dtCreated = "Created On: " + keychainItem.CreationDate;
+            var dtModified = "Modified On: " + keychainItem.ModificationDate;
+            var creator = "Creator: " + keychainItem.Creator;
+            
+            var type = "Type: " + keychainItem.Type;
+            var isInvisible = "Hidden: " + keychainItem.Invisible;
+            var isNegative = "Password Present: " + keychainItem.Negative;
+            
+            var trNewRow = document.createElement('tr');
+            
+            var tdNumData = document.createElement('td');
+            tdNumData.width = col1_width;
+            tdNumData.appendChild(document.createTextNode(i+1));
+            trNewRow.appendChild(tdNumData);
+            
+            var tdCertData = document.createElement('td');
+            tdCertData.width = col2_width;
+            tdCertData.appendChild(document.createTextNode(subject));
+            tdCertData.appendChild(document.createElement('br'));
+            tdCertData.appendChild(document.createTextNode(certtype));
+            tdCertData.appendChild(document.createElement('br'));
+            tdCertData.appendChild(document.createTextNode(encoding));
+            tdCertData.appendChild(document.createElement('br'));
+            tdCertData.appendChild(document.createTextNode(serialnum));
+            tdCertData.appendChild(document.createElement('br'));
+            tdCertData.appendChild(document.createTextNode(subjectkeyid));
+            tdCertData.appendChild(document.createElement('br'));
+            tdCertData.appendChild(document.createTextNode(publickeyhash));
+            trNewRow.appendChild(tdCertData);
+            
+            var tdAccessibilityData = document.createElement('td');
+            tdAccessibilityData.width = col3_width;
+            tdAccessibilityData.appendChild(document.createTextNode(accessibility));
+            tdAccessibilityData.appendChild(document.createElement('br'));
+            tdAccessibilityData.appendChild(document.createTextNode(accessGroup));
+            trNewRow.appendChild(tdAccessibilityData);
+            
+            var tdDescData = document.createElement('td');
+            tdDescData.width = col4_width;
+            tdDescData.appendChild(document.createTextNode(label));
+            tdDescData.appendChild(document.createElement('br'));
+            tdDescData.appendChild(document.createTextNode(comment));
+            tdDescData.appendChild(document.createElement('br'));
+            tdDescData.appendChild(document.createTextNode(description));
+            trNewRow.appendChild(tdDescData);
+            
+            var tdCreationData = document.createElement('td');
+            tdCreationData.width = col5_width;
+            tdCreationData.appendChild(document.createTextNode(dtCreated));
+            tdCreationData.appendChild(document.createElement('br'));
+            tdCreationData.appendChild(document.createTextNode(dtModified));
+            tdCreationData.appendChild(document.createElement('br'));
+            tdCreationData.appendChild(document.createTextNode(creator));
+            trNewRow.appendChild(tdCreationData);
+            
+            var tdOtherData = document.createElement('td');
+            tdOtherData.width = col6_width;
+            tdOtherData.appendChild(document.createTextNode(type));
+            tdOtherData.appendChild(document.createElement('br'));
+            tdOtherData.appendChild(document.createTextNode(isInvisible));
+            tdOtherData.appendChild(document.createElement('br'));
+            tdOtherData.appendChild(document.createTextNode(isNegative));
+            trNewRow.appendChild(tdOtherData);
+            
+            new_data_table.appendChild(trNewRow);
+            
+            return;
+        }
+        
+        
+        function key_addTableRow(new_data_table, keychainItem, i)
+        {
+            var keyclass 		= "Class: " 				+ keychainItem.KeyClass;
+            var keytype  		= "Type: " 					+ keychainItem.KeyType;
+            var keysize 		= "Length (in bits): " 		+ keychainItem.KeySizeInBits;
+            var effkeysize 		= "Eff. Len. (in bits): " 	+ keychainItem.EffectiveKeySizeInBits;
+            var keyval			= "Key: "					+ keychainItem.Key;
+			
+            var accessibility 	= "Can be accessed: " 		+ keychainItem.Accessible;
+            var accessGroup 	= "Access Group: " 			+ keychainItem.AccessGroup;
+            
+            var label 			= "Label: " 				+ keychainItem.Label;
+            var comment 		= "Comment: " 				+ keychainItem.Comment;
+            var description 	= "Description: " 			+ keychainItem.Description;
+            var applabel		= "App. Label: "			+ keychainItem.ApplicationLabel;
+            var apptag			= "App. Tag: "				+ keychainItem.ApplicationTag;
+            
+            var canencrypt		= "Can Encrypt: " 			+ keychainItem.CanEncrypt;
+            var candecrypt		= "Can Decrypt: " 			+ keychainItem.CanDecrypt;
+            var canderive		= "Can Derive: " 			+ keychainItem.CanDerive;
+            var cansign			= "Can Sign: "	 			+ keychainItem.CanSign;	
+            var canverify		= "Can Verify: " 			+ keychainItem.CanVerify;
+            var canwrap			= "Can Wrap: " 				+ keychainItem.CanWrap;
+            var canunwrap		= "Can Unwrap: " 			+ keychainItem.CanUnwrap;
+			
+            var dtCreated 		= "Created On: " 			+ keychainItem.CreationDate;
+            var dtModified 		= "Modified On: " 			+ keychainItem.ModificationDate;
+            var creator 		= "Creator: " 				+ keychainItem.Creator;
+            
+            var type 			= "Type: " 					+ keychainItem.Type;
+            var isInvisible 	= "Hidden: " 				+ keychainItem.Invisible;
+            var isNegative 		= "Password Present: " 		+ keychainItem.Negative;
+            var isPermanent		= "Permanent: "				+ keychainItem.Permanent;
+            
+            var trNewRow = document.createElement('tr');
+            
+            var tdNumData = document.createElement('td');
+            tdNumData.width = col1_width;
+            tdNumData.appendChild(document.createTextNode(i+1));
+            trNewRow.appendChild(tdNumData);		
+            
+            var tdKeyData = document.createElement('td');
+            tdKeyData.width = col2_width;
+            tdKeyData.appendChild(document.createTextNode(keyclass));
+            tdKeyData.appendChild(document.createElement('br'));
+            tdKeyData.appendChild(document.createTextNode(keytype));
+            tdKeyData.appendChild(document.createElement('br'));	
+            tdKeyData.appendChild(document.createTextNode(keysize));
+            tdKeyData.appendChild(document.createElement('br'));	
+            tdKeyData.appendChild(document.createTextNode(effkeysize));
+            tdKeyData.appendChild(document.createElement('br'));	
+            tdKeyData.appendChild(document.createTextNode(keyval));
+            trNewRow.appendChild(tdKeyData);		
+            
+            var tdAccessibilityData = document.createElement('td');
+            tdAccessibilityData.width = col3_width;
+            tdAccessibilityData.appendChild(document.createTextNode(accessibility));
+            tdAccessibilityData.appendChild(document.createElement('br'));
+            tdAccessibilityData.appendChild(document.createTextNode(accessGroup));
+            trNewRow.appendChild(tdAccessibilityData);		
+            
+            var tdDescData = document.createElement('td');
+            tdDescData.width = col4_width;
+            tdDescData.appendChild(document.createTextNode(label));
+            tdDescData.appendChild(document.createElement('br'));
+            tdDescData.appendChild(document.createTextNode(comment));
+            tdDescData.appendChild(document.createElement('br'));	
+            tdDescData.appendChild(document.createTextNode(description));
+            tdDescData.appendChild(document.createElement('br'));	
+            tdDescData.appendChild(document.createTextNode(applabel));
+            tdDescData.appendChild(document.createElement('br'));	
+            tdDescData.appendChild(document.createTextNode(apptag));
+            trNewRow.appendChild(tdDescData);		
+            
+            var tdCapabilityData = document.createElement('td');
+            tdCapabilityData.width = col5_width;
+            tdCapabilityData.appendChild(document.createTextNode(canencrypt));
+            tdCapabilityData.appendChild(document.createElement('br'));
+            tdCapabilityData.appendChild(document.createTextNode(candecrypt));
+            tdCapabilityData.appendChild(document.createElement('br'));	
+            tdCapabilityData.appendChild(document.createTextNode(canderive));
+            tdCapabilityData.appendChild(document.createElement('br'));	
+            tdCapabilityData.appendChild(document.createTextNode(cansign));
+            tdCapabilityData.appendChild(document.createElement('br'));	
+            tdCapabilityData.appendChild(document.createTextNode(canverify));
+            tdCapabilityData.appendChild(document.createElement('br'));	
+            tdCapabilityData.appendChild(document.createTextNode(canwrap));
+            tdCapabilityData.appendChild(document.createElement('br'));	
+            tdCapabilityData.appendChild(document.createTextNode(canunwrap));
+            trNewRow.appendChild(tdCapabilityData);				 	 
+            
+            var tdOtherData = document.createElement('td');
+            tdOtherData.width = col6_width;
+            tdOtherData.appendChild(document.createTextNode(dtCreated));
+            tdOtherData.appendChild(document.createElement('br'));
+            tdOtherData.appendChild(document.createTextNode(dtModified));
+            tdOtherData.appendChild(document.createElement('br'));	
+            tdOtherData.appendChild(document.createTextNode(creator));
+            tdOtherData.appendChild(document.createElement('br'));	
+            tdOtherData.appendChild(document.createTextNode(isInvisible));
+            tdOtherData.appendChild(document.createElement('br'));	
+            tdOtherData.appendChild(document.createTextNode(isNegative));		
+            tdOtherData.appendChild(document.createElement('br'));	
+            tdOtherData.appendChild(document.createTextNode(isPermanent));		
+            trNewRow.appendChild(tdOtherData);				 	 
+            
+            new_data_table.appendChild(trNewRow);
+            
+            return;
+        }
+        
+        
+        function identity_addTableRow(new_data_table, keychainItem, i)
+        {
+            var subject 		= "Subject: " 				+ keychainItem.Summary;
+            var certtype 		= "Certificate Type: " 		+ keychainItem.CertificateType;
+            var encoding 		= "Certificate Encoding: " 	+ keychainItem.CertificateEncoding;
+            var serialnum 		= "Serial #: " 				+ keychainItem.SerialNumber;
+            var subjectkeyid 	= "Subject Key Id: " 		+ keychainItem.SubjectKeyId;
+            var publickeyhash 	= "Public Key Hash: " 		+ keychainItem.PublicKeyHash;
+            
+            var keyclass 		= "Class: " 				+ keychainItem.KeyClass;
+            var keytype  		= "Type: " 					+ keychainItem.KeyType;
+            var keysize 		= "Length (in bits): " 		+ keychainItem.KeySizeInBits;
+            var effkeysize 		= "Eff. Len. (in bits): " 	+ keychainItem.EffectiveKeySizeInBits;
+            var keyval			= "Key: "					+ keychainItem.Key;		
+			
+            var accessibility 	= "Can be accessed: " 		+ keychainItem.Accessible;
+            var accessGroup 	= "Access Group: " 			+ keychainItem.AccessGroup;
+            
+            var label 			= "Label: " 				+ keychainItem.Label;
+            var comment 		= "Comment: " 				+ keychainItem.Comment;
+            var description 	= "Description: " 			+ keychainItem.Description;
+            var applabel		= "App. Label: "			+ keychainItem.ApplicationLabel;
+            var apptag			= "App. Tag: "				+ keychainItem.ApplicationTag;
+            
+            var canencrypt		= "Can Encrypt: " 			+ keychainItem.CanEncrypt;
+            var candecrypt		= "Can Decrypt: " 			+ keychainItem.CanDecrypt;
+            var canderive		= "Can Derive: " 			+ keychainItem.CanDerive;
+            var cansign			= "Can Sign: "	 			+ keychainItem.CanSign;	
+            var canverify		= "Can Verify: " 			+ keychainItem.CanVerify;
+            var canwrap			= "Can Wrap: " 				+ keychainItem.CanWrap;
+            var canunwrap		= "Can Unwrap: " 			+ keychainItem.CanUnwrap;
+			
+            var dtCreated 		= "Created On: " 			+ keychainItem.CreationDate;
+            var dtModified 		= "Modified On: " 			+ keychainItem.ModificationDate;
+            var creator 		= "Creator: " 				+ keychainItem.Creator;
+            
+            var type 			= "Type: " 					+ keychainItem.Type;
+            var isInvisible 	= "Hidden: " 				+ keychainItem.Invisible;
+            var isNegative 		= "Password Present: " 		+ keychainItem.Negative;
+            var isPermanent		= "Permanent: "				+ keychainItem.Permanent;
+            
+            var trNewRow = document.createElement('tr');
+            
+            var tdNumData = document.createElement('td');
+            tdNumData.width = col1_width;
+            tdNumData.appendChild(document.createTextNode(i+1));
+            trNewRow.appendChild(tdNumData);		
+            
+            var tdCertData = document.createElement('td');
+            tdCertData.width = col2_width;
+            tdCertData.appendChild(document.createTextNode(subject));
+            tdCertData.appendChild(document.createElement('br'));
+            tdCertData.appendChild(document.createTextNode(certtype));
+            tdCertData.appendChild(document.createElement('br'));	
+            tdCertData.appendChild(document.createTextNode(encoding));
+            tdCertData.appendChild(document.createElement('br'));	
+            tdCertData.appendChild(document.createTextNode(serialnum));
+            tdCertData.appendChild(document.createElement('br'));	
+            tdCertData.appendChild(document.createTextNode(subjectkeyid));
+            tdCertData.appendChild(document.createElement('br'));	
+            tdCertData.appendChild(document.createTextNode(publickeyhash));
+            trNewRow.appendChild(tdCertData);	
+            
+            var tdAccessibilityData = document.createElement('td');
+            tdAccessibilityData.width = col3_width;
+            tdAccessibilityData.appendChild(document.createTextNode(accessibility));
+            tdAccessibilityData.appendChild(document.createElement('br'));
+            tdAccessibilityData.appendChild(document.createTextNode(accessGroup));
+            trNewRow.appendChild(tdAccessibilityData);		
+            
+            var tdKeyData = document.createElement('td');
+            tdKeyData.width = col4_width;
+            tdKeyData.appendChild(document.createTextNode(keyclass));
+            tdKeyData.appendChild(document.createElement('br'));
+            tdKeyData.appendChild(document.createTextNode(keytype));
+            tdKeyData.appendChild(document.createElement('br'));	
+            tdKeyData.appendChild(document.createTextNode(keysize));
+            tdKeyData.appendChild(document.createElement('br'));	
+            tdKeyData.appendChild(document.createTextNode(effkeysize));
+            tdKeyData.appendChild(document.createElement('br'));	
+            tdKeyData.appendChild(document.createTextNode(keyval));
+            trNewRow.appendChild(tdKeyData);		
+            
+            var tdCapabilityData = document.createElement('td');
+            tdCapabilityData.width = col5_width;
+            tdCapabilityData.appendChild(document.createTextNode(canencrypt));
+            tdCapabilityData.appendChild(document.createElement('br'));
+            tdCapabilityData.appendChild(document.createTextNode(candecrypt));
+            tdCapabilityData.appendChild(document.createElement('br'));	
+            tdCapabilityData.appendChild(document.createTextNode(canderive));
+            tdCapabilityData.appendChild(document.createElement('br'));	
+            tdCapabilityData.appendChild(document.createTextNode(cansign));
+            tdCapabilityData.appendChild(document.createElement('br'));	
+            tdCapabilityData.appendChild(document.createTextNode(canverify));
+            tdCapabilityData.appendChild(document.createElement('br'));	
+            tdCapabilityData.appendChild(document.createTextNode(canwrap));
+            tdCapabilityData.appendChild(document.createElement('br'));	
+            tdCapabilityData.appendChild(document.createTextNode(canunwrap));
+            trNewRow.appendChild(tdCapabilityData);				 	 
+            
+            var tdOtherData = document.createElement('td');
+            tdOtherData.width = col6_width;
+            tdOtherData.appendChild(document.createTextNode(label));
+            tdOtherData.appendChild(document.createElement('br'));
+            tdOtherData.appendChild(document.createTextNode(comment));
+            tdOtherData.appendChild(document.createElement('br'));	
+            tdOtherData.appendChild(document.createTextNode(description));
+            tdOtherData.appendChild(document.createElement('br'));	
+            tdOtherData.appendChild(document.createTextNode(applabel));
+            tdOtherData.appendChild(document.createElement('br'));	
+            tdOtherData.appendChild(document.createTextNode(apptag));
+            tdOtherData.appendChild(document.createElement('br'));		
+            tdOtherData.appendChild(document.createTextNode(dtCreated));
+            tdOtherData.appendChild(document.createElement('br'));
+            tdOtherData.appendChild(document.createTextNode(dtModified));
+            tdOtherData.appendChild(document.createElement('br'));	
+            tdOtherData.appendChild(document.createTextNode(creator));
+            tdOtherData.appendChild(document.createElement('br'));	
+            tdOtherData.appendChild(document.createTextNode(isInvisible));
+            tdOtherData.appendChild(document.createElement('br'));	
+            tdOtherData.appendChild(document.createTextNode(isNegative));		
+            tdOtherData.appendChild(document.createElement('br'));	
+            tdOtherData.appendChild(document.createTextNode(isPermanent));		
+            trNewRow.appendChild(tdOtherData);				 	 
+            
+            new_data_table.appendChild(trNewRow);
+            
+            return;
+        }
+        
+        </script>
+    
+</html>
